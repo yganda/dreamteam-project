@@ -1,7 +1,7 @@
-import React from "react";
-import { MainHeader } from "../components/MainHeader/MainHeader";
+import React from 'react';
+import { MainHeader } from '../components/MainHeader';
 
-export default { title: "Main Header" };
+export default { title: 'Main Header' };
 
 export const Header = () => (
   <div>

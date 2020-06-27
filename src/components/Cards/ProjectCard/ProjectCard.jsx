@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { InfoPanel } from "../../InfoPanel/InfoPanel";
-import { SkillTag } from "../../SkillTag/SkillTag";
-import "./ProjectCard.scss";
-import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { InfoPanel } from '../../InfoPanel/InfoPanel';
+import { SkillTag } from '../../SkillTag/SkillTag';
+import './ProjectCard.scss';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import EventIcon from "@material-ui/icons/Event";
 
 export const ProjectCard = ({ project }) => {
@@ -13,12 +13,12 @@ export const ProjectCard = ({ project }) => {
     skills,
     startDate,
     customer,
-    appliedPersons,
+    peopleApplied,
     teamCount,
     description,
   } = project;
 
-  const renderSkils = () => {
+  const renderSkills = () => {
     return skills.map((skill) => {
       return (
         <div className="projectCard-skillItem">
@@ -32,7 +32,7 @@ export const ProjectCard = ({ project }) => {
     return (
       <div className="projectCard-footerItem">
         <PeopleAltIcon className="projectCard-footerItem--icon" />
-        {`${appliedPersons} of ${teamCount}`}
+        {`${peopleApplied} of ${teamCount}`}
       </div>
     );
   };
@@ -55,7 +55,7 @@ export const ProjectCard = ({ project }) => {
           {customer}
         </div>
         <div className="projectCard-description">{description}</div>
-        <div className="projectCard-skills">{renderSkils()}</div>
+        <div className="projectCard-skills">{renderSkills()}</div>
         <div className="projectCard-footer">
           {renderTeam()} {renderDate()}
         </div>
@@ -65,5 +65,14 @@ export const ProjectCard = ({ project }) => {
 };
 
 ProjectCard.propTypes = {
-  position: PropTypes.object,
+  project: PropTypes.shape({
+    title: PropTypes.string,
+    stage: PropTypes.string,
+    skills: PropTypes.arrayOf(PropTypes.string),
+    startDate: PropTypes.string,
+    customer: PropTypes.string,
+    peopleApplied: PropTypes.number,
+    teamCount: PropTypes.number,
+    description: PropTypes.string,
+  }),
 };

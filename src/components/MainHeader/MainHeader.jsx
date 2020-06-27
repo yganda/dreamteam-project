@@ -1,9 +1,10 @@
-import React from "react";
-import "./MainHeader.scss";
-import { Button } from "../Button/Button";
-const LogoTxt = "Logo";
-const JoinTxt = "Join Us";
-const ButtonTxt = "Sign In";
+import React from 'react';
+import './MainHeader.scss';
+import { Button } from '../Button/Button';
+
+const LogoTxt = 'Logo';
+const JoinTxt = 'Join Us';
+const ButtonTxt = 'Sign In';
 
 export const MainHeader = () => {
   return (
@@ -14,8 +15,9 @@ export const MainHeader = () => {
       </div>
       <div className="mainHeader-logIn">
         <span className="mainHeader-logIn--txt">{JoinTxt}</span>
-        <div className="mainHeader-logIn--btn" ><Button color="blue" >{ButtonTxt}</Button></div>
-        
+        <div className="mainHeader-logIn--btn">
+          <Button color="blue" >{ButtonTxt}</Button>
+        </div>
       </div>
     </div>
   );

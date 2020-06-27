@@ -1,13 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import './App.scss';
-import { MainHeader } from '../MainHeader/MainHeader'; 
+import { MainHeader } from '../MainHeader'; 
+import { Button } from '../Button';
+import { checkUser } from '../../actions/loginActions';
 
-function App({children}) {
+const App = ({children}) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
       <MainHeader/>
       <div className="childrenContainer">
-          {children}
+        {children}
+        <Button onClick={ () => dispatch(checkUser())}>Test Action</Button>
       </div>
     </div>
   );

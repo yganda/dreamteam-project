@@ -1,7 +1,7 @@
-import React from "react";
-import { InfoPanel } from "../components/InfoPanel/InfoPanel";
+import React from 'react';
+import { InfoPanel } from '../components/InfoPanel/InfoPanel';
 
-export default { title: "InfoPanel" };
+export default { title: 'InfoPanel' };
 
 export const GreyInfoPanel = () => (
   <div style={{ margin: "0 10px" }}>
