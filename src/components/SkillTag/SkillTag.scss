@@ -1,0 +1,15 @@
+@import '../../styles/variables/colors.scss';
+@import '../../styles/variables/typography.scss';
+
+.skillTag {
+  color: $color-brand-secondary-grey-dark;
+  box-sizing: border-box;
+  height: 18px;
+  width: 43px;
+  border: 1px solid $color-brand-secondary-grey-dark;
+  border-radius: 3px;
+  font: $l2-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

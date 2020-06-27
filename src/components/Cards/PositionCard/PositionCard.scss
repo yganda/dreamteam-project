@@ -1,0 +1,50 @@
+@import "../../../styles/variables/colors.scss";
+@import "../../../styles/variables/typography.scss";
+
+.positionCard {
+  height: 198px;
+  width: 336px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.positionCard-title {
+  color: $color-white;
+  font: $h3-font;
+}
+
+.positionCard-project {
+  color: $color-brand-secondary-grey-dark;
+  font: $l2-font;
+}
+
+.positionCard-skills {
+  margin: 12px -3px 0 -3px;
+  display: flex;
+}
+
+.positionCard-skillItem {
+  margin: 0 3px;
+}
+
+.positionCard-date,
+.positionCard-customer {
+  margin-top: 26px;
+  display: flex;
+  font: $regular-font;
+  color: $color-white;
+}
+
+.positionCard-icon {
+  color: $color-brand-secondary-grey-dark;
+  margin-right: 9px;
+}
+
+.positionCard-label {
+  color: $color-brand-secondary-grey-dark;
+  margin-right: 12px;
+}
+
+.positionCard-customer {
+  margin-top: 6px;
+}

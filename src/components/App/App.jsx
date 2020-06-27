@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from '../../assets/logo.svg';
-import './App.css';
+import { useDispatch } from 'react-redux';
+import './App.scss';
+import { MainHeader } from '../MainHeader'; 
+import { Button } from '../Button';
+import { checkUser } from '../../actions/loginActions';
 
-function App() {
+const App = ({children}) => {
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MainHeader/>
+      <div className="childrenContainer">
+        {children}
+        <Button onClick={ () => dispatch(checkUser())}>Test Action</Button>
+      </div>
     </div>
   );
 }

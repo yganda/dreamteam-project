@@ -1,0 +1,63 @@
+@import "../../../styles/variables/colors.scss";
+@import "../../../styles/variables/typography.scss";
+
+.projectCard {
+  height: 240px;
+  width: 336px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.projectCard-title {
+  color: $color-white;
+  font: $h3-font;
+}
+
+.projectCard-projectInfo{
+  color: $color-brand-secondary-grey-dark;
+  font: $l1-font;
+  display: flex;
+
+  &--stage {
+      height: 18px;
+      background: $color-brand-secondary-grey-dark;
+      color: $color-white;
+      border-radius: 3px;
+      font: $l2-font;
+      padding: 0 6px;
+      margin: 3px 12px 3px 0;
+  }
+}
+
+.projectCard-description {
+    margin-top: 24px;
+    font: $regular-font;
+    color: $color-white;
+}
+
+.projectCard-skills {
+  margin: 18px -3px 0 -3px;
+  display: flex;
+}
+
+.projectCard-skillItem {
+  margin: 0 3px;
+}
+
+.projectCard-footer {
+  margin-top: 12px;
+  display: flex;
+  font: $regular-font;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectCard-footerItem {
+    display: flex;
+    color: $color-white;
+
+    &--icon {
+        color: $color-brand-secondary-grey-dark;
+        margin-right: 6px;
+    }
+}
