@@ -1,0 +1,46 @@
+@import "../../styles/variables/colors.scss";
+@import "../../styles/variables/typography.scss";
+
+.mainHeader {
+  background: $color-brand-functional-dark-light;
+  padding: 12px;
+  height: 72px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mainHeader-logo {
+    display: inline-block; 
+    height: 48px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+.mainHeader-logo--img {
+  width: 48px;
+  height: 48px;
+  background: $color-brand-primary-blue;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-right: 18px;
+}
+
+.mainHeader-logo--txt {
+    color: $color-white;
+    font: $h2-logo-font;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mainHeader-logIn--txt{
+    color: $color-brand-secondary-grey-dark;
+    margin-right: 32px;
+    font: $label-font;
+}
+
+.mainHeader-logIn--btn {
+    width: 98px;
+    display: inline-block;
+}

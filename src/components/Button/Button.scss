@@ -1,0 +1,67 @@
+@import "../../styles/variables/colors.scss";
+@import "../../styles/variables/typography.scss";
+
+$button-font-family: $font-family-main;
+$button-font-size: 14px;
+$button-font-color-dark-grey: #b8c1d0;
+$button-border-radius: 3px;
+$button-height: 48px;
+$button-bg-color-grey: #343C55;
+$buttom-bg-color-disabled: #e3e7ed;
+
+.button {
+  display: inline-block;
+  height: $button-height;
+  font: $label-font;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: $button-border-radius;
+  box-sizing: border-box;
+  color: $color-white;
+  border: 1px solid transparent;
+  width: inherit;
+
+  &--blue {
+    background: $color-brand-primary-blue;
+
+    &:hover {
+      background: $color-brand-primary-blue-light;
+    }
+
+    &:active {
+      background: $color-brand-primary-blue-dark;
+    }
+  }
+
+  &--green {
+    background: $color-brand-positive-green;
+
+    &:hover {
+      background: $color-brand-positive-green-light;
+    }
+
+    &:active {
+      background: $color-brand-positive-green-dark;
+    }
+  }
+
+  &--dark {
+    background: $color-brand-functional-dark;
+    color: $color-brand-secondary-grey-dark;
+
+    &:hover {
+      background: $button-bg-color-grey;
+    }
+
+    &:active {
+      background: $color-brand-functional-dark-dark;
+    }
+  }
+
+  &--disabled,
+  &--disabled:hover {
+    background: $buttom-bg-color-disabled;
+    color: $button-font-color-dark-grey;
+  }
+}
