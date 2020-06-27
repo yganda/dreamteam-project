@@ -1,7 +1,7 @@
-import React from "react";
-import { SkillTag } from "../components/SkillTag/SkillTag";
+import React from 'react';
+import { SkillTag } from '../components/SkillTag/SkillTag';
 
-export default { title: "SkillTag" };
+export default { title: 'SkillTag' };
 
 const SkillTxt = 'Java'
 
@@ -12,3 +12,4 @@ export const Skill = () => (
     </SkillTag>
   </div>
 );
+

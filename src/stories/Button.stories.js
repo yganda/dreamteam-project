@@ -1,7 +1,7 @@
-import React from "react";
-import { Button } from "../components/Button/Button";
+import React from 'react';
+import { Button } from '../components/Button';
 
-export default { title: "Button" };
+export default { title: 'Button' };
 
 export const MainButton = () => (
   <div style={{ width: "300px", margin: "0 10px" }}>
@@ -11,7 +11,7 @@ export const MainButton = () => (
     <Button color='dark'>Dark button</Button>
     <br />
     <br />
-    <Button color='green'>Sucsess button</Button>
+    <Button color='green'>Success button</Button>
     <br />
     <br />
     <Button disabled>Disabled button</Button>

@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./Button.scss";
-import clsx from "clsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Button.scss';
+import clsx from 'clsx';
 
 export const Button = ({
   children,

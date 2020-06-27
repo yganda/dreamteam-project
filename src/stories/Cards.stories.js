@@ -1,11 +1,11 @@
-import React from "react";
-import { PositionCard } from "../components/Cards/PositionCard/PositionCard";
+import React from 'react';
+import { PositionCard } from '../components/Cards/PositionCard/PositionCard';
 import { ProjectCard } from '../components/Cards/ProjectCard/ProjectCard';
-export default { title: "Cards" };
+export default { title: 'Cards' };
 
 const position = {
-  title: "iOS Developer",
-  project: "Dream Team project name",
+  title: 'iOS Developer',
+  project: 'Dream Team project name',
   customer: 'Startup Jam Inc.',
   skills: ['Swift', 'Xcode'],
   startDate: 'July 6, 2020',
@@ -18,7 +18,7 @@ const project = {
   stage: 'MVP',
   customer: 'Startup Jam Inc.',
   skills: ['Java', '.NET', 'CSS', 'UX'],
-  appliedPersons: 3,
+  peopleApplied: 3,
   teamCount: 24,
   startDate: 'July 6, 2020',
   description: 'Development of platform for the search for charity projects.'
