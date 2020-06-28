@@ -21,13 +21,7 @@ const similarPositionsTxt = 'Suggested courses';
 const posDetailsTxt = 'Position details';
 const projectDetailsTxt = 'Project details';
 
-
-
-
-
 export const Position = () => {
-
-
     return (
         <div> Hello </div>
     )

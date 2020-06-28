@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router'
 import { createBrowserHistory } from 'history';
 import createStore from './store/createStore';
 import App from './containers/App';
@@ -14,11 +14,11 @@ const store = createStore(appHistory);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router onUpdate={() => window.scrollTo(0, 0)}>
+      <ConnectedRouter history={appHistory}>
         <App>
           { routes }
         </App>
-      </Router> 
+      </ConnectedRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

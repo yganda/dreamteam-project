@@ -5,11 +5,12 @@ import clsx from 'clsx';
 
 export const Button = ({
   children,
+  className,
   disabled = false,
   color = Button.COLORS.BLUE,
   ...rest
 }) => {
-  const classes = clsx("button", `button--${color}`, {
+  const classes = clsx("button", `button--${color}`, className, {
     "button--disabled": disabled,
   });
 
