@@ -1,0 +1,47 @@
+@import '../../styles/variables/colors';
+@import '../../styles/variables/typography';
+
+.signin-form {
+  position: relative;
+  width: 396px;
+  height: 456px;
+  padding: 24px 30px;
+  color: $color-white;
+  background-color: $color-brand-functional-dark-light;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  h2 {
+    margin: 0 0 18px;
+    font: $h2-font;
+  }
+
+  &__close-icon {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: $color-brand-secondary-grey-dark;
+  }
+
+  &__options {
+    padding-bottom: 30px;
+    svg {
+      padding-right: 10px;
+    }
+  }
+
+  &__fields {
+    div:first-child {
+      padding-bottom: 30px;
+    }
+    div:last-child {
+      padding-bottom: 18px;
+    }
+  }
+
+  &__remember-user {
+    font: $regular-font;
+    color: $color-brand-secondary-grey-dark;
+  }
+}

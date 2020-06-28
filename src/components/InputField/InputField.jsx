@@ -6,6 +6,7 @@ import './InputField.scss';
 export const InputField = ({
   className,
   disabled,
+  inputLabel,
   inputType = InputField.INPUT_TYPES.TEXT,
   onInputChange,
   value,
@@ -17,10 +18,10 @@ export const InputField = ({
   });
 
   return (
-    <div>
+    <div className={ classes }>
+      <label>{ inputLabel }</label>
       <input
         onChange={ onInputChange }
-        className={ classes }
         type={ inputType }
         value={ value }
         { ...props }
@@ -30,6 +31,7 @@ export const InputField = ({
 };
 
 InputField.INPUT_TYPES = {
+  EMAIL: 'email',
   PASSWORD: 'password',
   TEXT: 'text',
 };
@@ -37,6 +39,7 @@ InputField.INPUT_TYPES = {
 InputField.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  inputLabel: PropTypes.string,
   inputType: PropTypes.oneOf([...Object.values(InputField.INPUT_TYPES)]),
   onInputChange: PropTypes.func,
   value: PropTypes.oneOfType([
