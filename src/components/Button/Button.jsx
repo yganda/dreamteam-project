@@ -30,5 +30,6 @@ Button.COLORS = {
 Button.propTypes = {
   disabled: PropTypes.bool,
   children: PropTypes.string,
+  className: PropTypes.string,
   color: PropTypes.oneOf([...Object.values(Button.COLORS)]),
 };

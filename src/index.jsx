@@ -9,7 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import routes from './config/routes';
 
 const appHistory = createBrowserHistory();
-const store = createStore(appHistory);
+const store = createStore(appHistory, {});
 
 ReactDOM.render(
   <React.StrictMode>
