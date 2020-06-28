@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import './App.scss';
-import { MainHeader } from '../MainHeader'; 
-import { Button } from '../Button';
+import { MainHeader } from '../../components/MainHeader';
+import { Button } from '../../components/Button';
 import { checkUser } from '../../actions/loginActions';
 
 const App = ({children}) => {

@@ -1,31 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { createLogger } from 'redux-logger';
-import { rootReducer } from './reducers';
-import App from './components/App';
+import { createBrowserHistory } from 'history';
+import createStore from './store/createStore';
+import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 
-const composeEnhancers = composeWithDevTools({});
-
-const logger = createLogger({
-  collapsed: true,
-  logErrors: false,
-});
-
-const middleware = [];
-if (process.env.NODE_ENV === 'development') {
-  middleware.push(logger);
-}
-
-const store = createStore(
-  rootReducer,
-  composeEnhancers(
-    applyMiddleware(...middleware),
-  )
-);
+const appHistory = createBrowserHistory();
+const store = createStore(appHistory);
 
 ReactDOM.render(
   <React.StrictMode>
