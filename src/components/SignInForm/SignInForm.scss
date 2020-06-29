@@ -3,14 +3,8 @@
 
 .signin-form {
   position: relative;
-  width: 396px;
-  height: 456px;
-  padding: 24px 30px;
   color: $color-white;
-  background-color: $color-brand-functional-dark-light;
-  border-radius: 6px;
   box-sizing: border-box;
-  cursor: pointer;
 
   h2 {
     margin: 0 0 18px;
@@ -19,8 +13,8 @@
 
   &__close-icon {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 0;
+    right: 0;
     color: $color-brand-secondary-grey-dark;
   }
 

@@ -1,14 +1,15 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 import MainHeader from '../../components/MainHeader';
-import { Route, Switch } from 'react-router-dom';
-import Home from "../Home"
-import PositionSearch from "../PositionSearch"
-import {Position} from "../Position/Position"
+import ModalContainer from '../../components/ModalContainer';
+import Home from '../Home';
+import PositionSearch from '../PositionSearch';
+import { Position } from '../Position/Position';
 
-const App = () => {
+const App = ({ modalType, showModal }) => {
   return (
-    <div className="App">
+    <div className="app">
       <MainHeader/>
       <div className="childrenContainer">
         <Switch>
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path="/positions/:positionId" component={ Position } />
         </Switch>
       </div>
+      <ModalContainer modalType={ modalType } showModal={ showModal } />
     </div>
   );
 }
