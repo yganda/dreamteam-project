@@ -6,8 +6,8 @@ import './PositionCard.scss';
 import EventIcon from '@material-ui/icons/Event';
 import WorkRoundedIcon from '@material-ui/icons/WorkRounded';
 
-const StartDateLabel = 'Start date';
-const CustomerLabel = 'Customer';
+const startDateLabel = 'Start date';
+const customerLabel = 'Customer';
 
 export const PositionCard = ({ position }) => {
   const { title, project, skills, startDate, customer } = position;
@@ -26,7 +26,7 @@ export const PositionCard = ({ position }) => {
     return (
       <>
         <EventIcon className="positionCard-icon" />
-        <span className="positionCard-label">{StartDateLabel}</span>
+        <span className="positionCard-label">{startDateLabel}</span>
         {startDate}
       </>
     );
@@ -36,7 +36,7 @@ export const PositionCard = ({ position }) => {
     return (
       <>
         <WorkRoundedIcon className="positionCard-icon" />
-        <span className="positionCard-label">{CustomerLabel}</span>
+        <span className="positionCard-label">{customerLabel}</span>
         {customer}
       </>
     );
