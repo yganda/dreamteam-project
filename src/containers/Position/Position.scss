@@ -1,0 +1,72 @@
+@import "../../styles/variables/colors.scss";
+@import "../../styles/variables/typography.scss";
+
+.positionPage {
+  width: 1440px;
+  box-sizing: border-box;
+  padding: 18px 12px 24px 12px;
+}
+
+.positionPage-backLink {
+  color: $color-brand-secondary-grey-dark;
+  font: $regular-font;
+  text-decoration: none;
+  display: flex;
+
+  &--icon {
+    margin-right: 12px;
+  }
+}
+
+.positionPage-title {
+  font: $h1-font;
+  color: $color-white;
+  margin-top: 24px;
+}
+.positionPage-main {
+  margin-top: 48px;
+  color: $color-white;
+  display: flex;
+  height: 564px;
+}
+.positionPage-main--role {
+  height: 564px;
+  width: 1056px;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.positionPage-main--right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+}
+
+.positionPage-main--position {
+  height: 186px;
+  width: 336px;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.positionPage-main--project {
+  height: 282px;
+  width: 336px;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.positionPage-footer {
+  margin-top: 24px;
+  font: $h3-font;
+  color: $color-white;
+}
+
+.positionPage-footer--positionList {
+  margin: 24px -12px 0 -12px;
+}
+
+.positionPage-footer--positionItem{
+  margin: 0 12px;
+}
+

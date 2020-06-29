@@ -5,7 +5,6 @@ import { MainHeader } from '../../components/MainHeader';
 import { Button } from '../../components/Button';
 import { checkUser } from '../../actions/loginActions';
 import { withRouter } from 'react-router-dom';
-// import { PUBLIC_ROUTES } from 'config/routes';
 
 const App = ({children, history}) => {
   const dispatch = useDispatch();
