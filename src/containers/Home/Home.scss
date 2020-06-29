@@ -1,0 +1,20 @@
+@import '../../styles/variables/colors';
+@import '../../styles/variables/typography';
+
+.home-page {
+  &__header {
+    width: 749px;
+    margin: 0;
+    padding: 330px 0 48px;
+    font: $h1-font;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+  &__button {
+    height: auto;
+    margin-right: 30px;
+    padding: 18px 24px;
+    font: $button-font;
+    text-transform: uppercase;
+  }
+}
