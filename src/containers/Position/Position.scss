@@ -1,9 +1,14 @@
 @import "../../styles/variables/colors.scss";
 @import "../../styles/variables/typography.scss";
 
+.positionPage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .positionPage {
   width: 1440px;
-  box-sizing: border-box;
   padding: 18px 12px 24px 12px;
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './MainHeader.scss';
 import { Button } from '../Button/Button';
 
@@ -6,7 +7,7 @@ const LogoTxt = 'Logo';
 const JoinTxt = 'Join Us';
 const ButtonTxt = 'Sign In';
 
-export const MainHeader = () => {
+const MainHeader = () => {
   return (
     <div className="mainHeader">
       <div className="mainHeader-logo">
@@ -22,3 +23,5 @@ export const MainHeader = () => {
     </div>
   );
 };
+
+export default withRouter(MainHeader);

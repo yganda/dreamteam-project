@@ -6,9 +6,9 @@ import { Position } from '../containers/Position/Position';
 
 const routes = (
   <Switch>
-    <Route exact path="/" render={ props => <Home { ...props } /> } />
-    <Route exact path="/positions" render={ props => <PositionSearch { ...props } /> } />
-    <Route exact path="/positions/:positionId" render={ props => <Position { ...props } /> } />
+    <Route exact path="/" component={ Home } />
+    <Route exact path="/positions" component={ PositionSearch } />
+    <Route exact path="/positions/:positionId" component={ Position } />
   </Switch>
 );
 
