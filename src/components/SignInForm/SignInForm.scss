@@ -1,0 +1,77 @@
+@import '../../styles/variables/colors';
+@import '../../styles/variables/typography';
+
+.signin-form {
+  position: relative;
+  color: $color-white;
+  box-sizing: border-box;
+
+  h2 {
+    margin: 0 0 18px;
+    font: $h2-font;
+  }
+
+  &__close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $color-brand-secondary-grey-dark;
+    cursor: pointer;
+  }
+
+  &__options {
+    display: flex;
+    box-sizing: border-box;
+    align-content: center;
+    padding-bottom: 30px;
+    cursor: pointer;
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+    }
+
+    &--google {
+      display: inline-flex;
+      flex-direction: column;
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+      justify-content: center;
+      background-color: white;
+      border-radius: 2px;
+      svg {
+        width: 18px;
+        height: 18px;
+        margin: auto;
+      }
+    }
+  }
+
+  &__fields  {
+    .input-field:first-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__remember-user {
+    display: flex;
+    margin-bottom: 30px;
+    font: $regular-font;
+    color: $color-brand-secondary-grey-dark;
+  }
+
+  &__forgot-password {
+    color: $color-brand-primary-blue;
+    cursor: pointer;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__signin-btn {
+    flex: 40% 0;
+  }
+}

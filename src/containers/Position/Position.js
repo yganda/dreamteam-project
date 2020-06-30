@@ -74,30 +74,32 @@ export const Position = () => {
   };
 
   return (
-    <div className="positionPage">
-      <header>
-        <Link className="positionPage-backLink">
-          <ArrowBackIcon className="positionPage-backLink--icon" />
-          {backTxt}
-        </Link>
-        <div className="positionPage-title">{`${title} for ${projectName}`}</div>
-      </header>
-      <main className="positionPage-main">
-        <InfoPanel>
-          <div className="positionPage-main--role">Hello</div>
-        </InfoPanel>
-        <div className="positionPage-main--right">
-          <PositionDetails position={position} />
-          <ProjectDetails project={project} />
-          <Button color="blue">{`Apply for ${title} role`}</Button>
-        </div>
-      </main>
-      <footer className="positionPage-footer">
-        {similarPositionsTxt}
-        <div className="positionPage-footer--positionList">
-          {renderPositionList()}
-        </div>
-      </footer>
+    <div className="positionPage-container">
+      <div className="positionPage">
+        <header>
+          <Link className="positionPage-backLink">
+            <ArrowBackIcon className="positionPage-backLink--icon" />
+            {backTxt}
+          </Link>
+          <div className="positionPage-title">{`${title} for ${projectName}`}</div>
+        </header>
+        <main className="positionPage-main">
+          <InfoPanel>
+            <div className="positionPage-main--role">Hello</div>
+          </InfoPanel>
+          <div className="positionPage-main--right">
+            <PositionDetails position={position} />
+            <ProjectDetails project={project} />
+            <Button color="blue">{`Apply for ${title} role`}</Button>
+          </div>
+        </main>
+        <footer className="positionPage-footer">
+          {similarPositionsTxt}
+          <div className="positionPage-footer--positionList">
+            {renderPositionList()}
+          </div>
+        </footer>
+      </div>
     </div>
   );
 };

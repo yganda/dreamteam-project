@@ -6,7 +6,6 @@ import { createBrowserHistory } from 'history';
 import createStore from './store/createStore';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
-import routes from './config/routes';
 
 const appHistory = createBrowserHistory();
 const store = createStore(appHistory, {});
@@ -15,9 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ConnectedRouter history={appHistory}>
-        <App>
-          { routes }
-        </App>
+        <App />
       </ConnectedRouter>
     </Provider>
   </React.StrictMode>,
