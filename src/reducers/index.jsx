@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
-import { loginReducer } from './loginReducer';
+import { modalReducer } from './modalReducer';
 
 const createRootReducer = (history) => combineReducers({
-  login: loginReducer,
+  modal: modalReducer,
   router: connectRouter(history),
 });
 

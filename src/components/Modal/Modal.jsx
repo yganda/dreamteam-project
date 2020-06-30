@@ -8,7 +8,7 @@ const Modal = (
   {
     className,
     modalType = Modal.MODAL_TYPES,
-    children
+    children,
 }) => {
   const classes = clsx('modal', `modal--${modalType}`, className);
   const contentClasses = clsx('modal__content', `modal__content--${modalType}`);

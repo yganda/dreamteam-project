@@ -1,13 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import './MainHeader.scss';
+import { MODAL_TYPES } from '../../constants';
 import { Button } from '../Button/Button';
+import { showModal } from '../../actions/modalActions';
+import './MainHeader.scss';
 
 const LogoTxt = 'Logo';
 const JoinTxt = 'Join Us';
 const ButtonTxt = 'Sign In';
 
 const MainHeader = () => {
+  const dispatch = useDispatch();
+  const handleClick = () => dispatch(showModal(MODAL_TYPES.SIGN_IN));
+
   return (
     <div className="mainHeader">
       <div className="mainHeader-logo">
@@ -17,7 +23,7 @@ const MainHeader = () => {
       <div className="mainHeader-logIn">
         <span className="mainHeader-logIn--txt">{JoinTxt}</span>
         <div className="mainHeader-logIn--btn">
-          <Button color="blue" >{ButtonTxt}</Button>
+          <Button onClick={ handleClick } color="blue">{ButtonTxt}</Button>
         </div>
       </div>
     </div>

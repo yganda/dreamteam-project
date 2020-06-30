@@ -7,7 +7,7 @@ import Home from '../Home';
 import PositionSearch from '../PositionSearch';
 import { Position } from '../Position/Position';
 
-const App = ({ modalType, showModal }) => {
+const App = () => {
   return (
     <div className="app">
       <MainHeader/>
@@ -18,7 +18,7 @@ const App = ({ modalType, showModal }) => {
           <Route exact path="/positions/:positionId" component={ Position } />
         </Switch>
       </div>
-      <ModalContainer modalType={ modalType } showModal={ showModal } />
+      <ModalContainer />
     </div>
   );
 }

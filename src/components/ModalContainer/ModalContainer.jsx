@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { MODAL_TYPES } from '../../constants';
 import Modal from '../Modal';
 import SignInForm from '../../components/SignInForm';
 
-const ModalContainer = ({ showModal = true, modalType }) => {
+const ModalContainer = () => {
+  const { modalType, showModal } = useSelector(({ modal }) => modal);
   if (!showModal) return null;
 
   switch (modalType) {
@@ -17,11 +18,6 @@ const ModalContainer = ({ showModal = true, modalType }) => {
     default:
       return null;
   }
-};
-
-ModalContainer.propTypes = {
-  modalType: PropTypes.string.isRequired,
-  showModal: PropTypes.bool,
 };
 
 export default ModalContainer;
