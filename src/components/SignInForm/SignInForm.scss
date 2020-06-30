@@ -20,23 +20,58 @@
   }
 
   &__options {
+    display: flex;
+    box-sizing: border-box;
+    align-content: center;
     padding-bottom: 30px;
+    cursor: pointer;
     svg {
-      padding-right: 10px;
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+    }
+
+    &--google {
+      display: inline-flex;
+      flex-direction: column;
+      width: 24px;
+      height: 24px;
+      margin-right: 16px;
+      justify-content: center;
+      background-color: white;
+      border-radius: 2px;
+      svg {
+        width: 18px;
+        height: 18px;
+        margin: auto;
+      }
     }
   }
 
-  &__fields {
-    div:first-child {
-      padding-bottom: 30px;
-    }
-    div:last-child {
-      padding-bottom: 18px;
+  &__fields  {
+    .input-field:first-child {
+      margin-bottom: 30px;
     }
   }
 
   &__remember-user {
+    display: flex;
+    margin-bottom: 30px;
     font: $regular-font;
     color: $color-brand-secondary-grey-dark;
+  }
+
+  &__forgot-password {
+    color: $color-brand-primary-blue;
+    cursor: pointer;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__signin-btn {
+    flex: 40% 0;
   }
 }
