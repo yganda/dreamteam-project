@@ -2,19 +2,226 @@
 @import '../../styles/variables/typography';
 
 .home-page {
-  &__header {
-    width: 749px;
-    margin: 0;
-    padding: 330px 0 48px;
-    font: $h1-font;
-    text-transform: uppercase;
-    color: $color-white;
-  }
   &__button {
-    height: auto;
-    margin-right: 30px;
+    box-sizing: border-box;
     padding: 18px 24px;
+    height: auto;
+    background: none;
+    border: 2px solid #3366FF;
+    border-radius: 3px;
+    color: $color-white;
     font: $button-font;
+    font-weight: 500;
     text-transform: uppercase;
+    margin-right: 24px;
+    font-size: 20px;
+    width: auto;
+
+    &:hover {
+      background-color: rgba(256,256,256,.2);
+    }
   }
+
+  &__first-block {
+    padding: 156px 12px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    &--content {
+      width: 594px;
+    }
+
+    &--buttons {
+      margin-top: 48px;
+    }
+
+    &--text {
+      margin-top: 24px;
+      color: $color-white;
+      font: $common-text-font;
+    }
+
+    &--title {
+      color: $color-white;
+      font: $h1-font;
+      letter-spacing: 0;
+
+      span {
+        color: $color-brand-primary-blue;
+      }
+    }
+  }
+
+  &__learn-block {
+    background-color: $color-brand-functional-dark-light;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &--container {
+      justify-content: space-between;
+      padding: 95px 12px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &--title {
+      color: $color-white;
+      font: $h1-font;
+    }
+
+    &--cards {
+      margin-top: 48px;
+      &:after {
+        clear: left;
+      }
+    }
+
+    &--card {
+      background-color: $color-brand-functional-dark-card;
+      height: 180px;
+      width: 456px;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin-left: 24px;
+      margin-bottom: 24px;
+      float: left;
+
+      &--content {
+        display: flex;
+        flex-direction: column;
+        margin-left: 22px;
+      }
+
+      &--image {
+        height: 128px;
+        width: 174px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        margin-left: 24px;
+      }
+
+      &--title {
+        color: $color-white;
+        font: $common-text-font;
+        font-weight: bold;
+      }
+
+      &--sub-title {
+        color: $color-white;
+        font: $common-text-small-font;
+      }
+    }
+
+    &--card--big {
+      height: 384px;
+      width: 456px;
+      background-color: $color-brand-functional-dark-card;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      float: left;
+
+      &--title {
+        margin-top: 15px;
+        color: $color-white;
+        font: $common-text-font;
+        font-weight: bold;
+      }
+
+      &--sub-title {
+        color: $color-white;
+        font: $common-text-small-font;
+      }
+    }
+
+    &--button {
+      padding: 18px 36px;
+      height: auto;
+      font-size: 20px;
+      line-height: 36px;
+      margin-top: 24px;
+      width: auto;
+      align-self: center;
+    }
+  }
+
+  &__news-block {
+    width: 100%;
+
+    &--content {
+      margin: 198px 12px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--container {
+      width: 683px;
+    }
+
+    &--underwriter {
+      margin-top: 48px;
+      &--title {
+        color: $color-white;
+        font: $l1-font;
+      }
+      &--skill {
+        color: $color-brand-secondary-grey-dark;
+        font: $l2-font;
+      }
+    }
+  }
+
+  &__join-block {
+    background-color: $color-brand-functional-dark-light;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    &--container {
+      justify-content: space-between;
+      padding: 57px 0;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &--title {
+      color: $color-white;
+      font: $common-title-font;
+    }
+
+    &--button {
+      padding: 18px 24px;
+      height: auto;
+      font-size: 20px;
+      line-height: 36px;
+      margin-top: 24px;
+      width: auto;
+      align-self: center;
+      text-transform: uppercase;
+      margin-right: 24px;
+    }
+
+    &--buttons {
+      margin-left: 24px;
+    }
+  }
+}
+
+section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

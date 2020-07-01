@@ -64,4 +64,11 @@ $buttom-bg-color-disabled: #e3e7ed;
     background: $buttom-bg-color-disabled;
     color: $button-font-color-dark-grey;
   }
+
+  &--no-bgr,
+  &--no-bgr:hover,
+  &--no-bgr:active {
+    background: none;
+    color: $color-brand-secondary-grey-dark;
+  }
 }

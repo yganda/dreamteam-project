@@ -1,17 +1,26 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
-import { MainHeader } from '../../components/MainHeader';
-import { withRouter } from 'react-router-dom';
+import MainHeader from '../../components/MainHeader';
+import ModalContainer from '../../components/ModalContainer';
+import Home from '../Home';
+import PositionSearch from '../PositionSearch';
+import { Position } from '../Position/Position';
+import { Project } from '../Project/Project';
 
-const App = ({children}) => {
+const App = () => {
   return (
-    <div className="App">
+    <div className="app">
       <MainHeader/>
-      <div className="childrenContainer">
-        {children}
-      </div>
+        <Switch>
+          <Route exact path="/" render={ props => <Home { ...props } /> } />
+          <Route exact path="/positions" render={ props => <PositionSearch { ...props } /> } />
+          <Route exact path="/positions/:positionId" render={ props => <Position { ...props } /> } />
+          <Route exact path="/projects/:projectId" render={ props => <Project { ...props } /> } />
+        </Switch>
+      <ModalContainer />
     </div>
   );
-}
+};
 
-export default withRouter(App);
+export default App;

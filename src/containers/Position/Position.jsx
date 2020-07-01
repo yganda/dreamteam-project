@@ -107,7 +107,7 @@ export const Position = () => {
     return filteredPositionList.map((position) => (
       <Link
         className="positionPage-footer--positionItem"
-        to={`/Position/${position.id}`}
+        to={`/positions/${position.id}`}
       >
         <PositionCard position={position} key={position.id} />
       </Link>
@@ -158,7 +158,7 @@ export const Position = () => {
   const projectName = () => {
     return (
       <Link
-        to={`/project/${position.projectId}`}
+        to={`/projects/${position.projectId}`}
         className="positionPage-title--link"
       >
         {project}

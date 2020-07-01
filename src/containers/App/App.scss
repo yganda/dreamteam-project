@@ -6,8 +6,14 @@ body {
   background: $color-brand-functional-dark-dark;
   margin: 0;
 }
-.childrenContainer {
+
+.main-container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 1440px;
+}
+
+.app {
+  position: relative;
 }

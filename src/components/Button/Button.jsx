@@ -8,10 +8,12 @@ export const Button = ({
   className,
   disabled = false,
   color = Button.COLORS.BLUE,
+  noBgr = false,
   ...rest
 }) => {
   const classes = clsx("button", `button--${color}`, className, {
     "button--disabled": disabled,
+    "button--no-bgr": noBgr,
   });
 
   return (
@@ -32,4 +34,5 @@ Button.propTypes = {
   children: PropTypes.string,
   className: PropTypes.string,
   color: PropTypes.oneOf([...Object.values(Button.COLORS)]),
+  noBgr: PropTypes.bool,
 };

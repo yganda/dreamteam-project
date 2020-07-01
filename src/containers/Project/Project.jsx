@@ -83,7 +83,7 @@ export const Project = () => {
       return (
         <Link
           className="projectPage-teamCard"
-          to={`/position/${teamMember.id}`}
+          to={`/positions/${teamMember.id}`}
         >
           <div className="projectPage-teamCard--content">
             <div className="projectPage-teamCard--title">
@@ -122,7 +122,7 @@ export const Project = () => {
     return filteredPositionList.map((project) => (
       <Link
         className="projectPage-footer--positionItem"
-        to={`/project/${project.id}`}
+        to={`/projects/${project.id}`}
         key={project.id}
       >
         <ProjectCard project={project} />
