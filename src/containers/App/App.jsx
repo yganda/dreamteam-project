@@ -6,6 +6,7 @@ import ModalContainer from '../../components/ModalContainer';
 import Home from '../Home';
 import PositionSearch from '../PositionSearch';
 import { Position } from '../Position/Position';
+import { Project } from '../Project/Project';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path="/" render={ props => <Home { ...props } /> } />
           <Route exact path="/positions" render={ props => <PositionSearch { ...props } /> } />
           <Route exact path="/positions/:positionId" render={ props => <Position { ...props } /> } />
+          <Route exact path="/projects/:projectId" render={ props => <Project { ...props } /> } />
         </Switch>
       <ModalContainer />
     </div>

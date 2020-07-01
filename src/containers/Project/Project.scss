@@ -1,13 +1,14 @@
 @import "../../styles/variables/colors.scss";
 @import "../../styles/variables/typography.scss";
 
-.positionPage {
+.projectPage {
   width: 1440px;
   box-sizing: border-box;
   padding: 18px 12px 24px 12px;
+  color: $color-white;
 }
 
-.positionPage-backLink {
+.projectPage-backLink {
   color: $color-brand-secondary-grey-dark;
   font: $regular-font;
   text-decoration: none;
@@ -20,136 +21,126 @@
   }
 }
 
-.positionPage-title {
+.projectPage-title {
   font: $h1-font;
-  color: $color-white;
   margin-top: 24px;
 }
-.positionPage-main {
+
+.projectPage-description {
+  font: $regular-font;
+}
+
+.projectPage-main {
   margin-top: 48px;
   color: $color-white;
   display: flex;
   height: 564px;
 }
 
-.positionPage-skillItem {
+.projectPage-teamCard--skills {
+  display: flex;
+  margin: 6px -3px 0;
+}
+
+.projectPage-skillItem {
   margin: 0 3px;
 }
 
-.positionPage-main--role {
-  height: 564px;
+.projectPage-main--left {
+  height: 492px;
   width: 1056px;
   box-sizing: border-box;
   padding: 24px;
 }
 
-.positionPage-main--title {
+.projectPage-main--title {
   font: $h3-font;
 }
 
-.positionPage-skills {
-  margin: 18px -3px 0 -3px;
-  display: flex;
-}
-
-.positionPage-main--required {
-  margin-right: 365px;
-}
-
-.positionPage-main--roleDescription {
+.projectPage-main--projectDescription {
   font: $regular-font;
-  margin-top: 18px;
+  margin: 18px 0 48px;
 }
 
-.positionPage-main--roleSkills {
-  margin: 48px 0;
-  display: flex;
-}
-
-.positionPage-main--right {
+.projectPage-main--right {
   display: flex;
   flex-direction: column;
   margin-left: 24px;
 }
-.positionPage-main--indents {
+
+.projectPage-main--indents {
   margin: 24px 0;
 }
 
-.positionPage-main--position {
+.projectPage-main--position {
   height: 186px;
   width: 336px;
   box-sizing: border-box;
   padding: 24px;
 }
 
-.positionPage-main--project {
+.projectPage-main--project {
   height: 282px;
   width: 336px;
   box-sizing: border-box;
   padding: 24px;
 }
 
-.positionPage-footer {
-  margin-top: 24px;
-  font: $h3-font;
-  color: $color-white;
-}
-
-.positionPage-footer--positionList {
-  margin: 24px -12px 0 -12px;
-}
-
-.positionPage-footer--positionItem {
-  margin: 0 12px;
-}
-
-.positionPage-title--link {
-  color: $color-white;
-}
-
-.positionPage-main--courses {
-  display: flex;
+.projectPage-main--teamWrapper {
   margin: 0 -12px;
 }
 
-.positionPage-courseCard {
+.projectPage-teamCard {
   color: $color-white;
   text-decoration: none;
-  font: $regular-font;
+  font: $l1-font;
   display: inline-block;
   margin: 12px;
 }
 
-.positionPage-courseCard--content {
-  padding: 12px;
+.projectPage-teamCard--content {
+  padding: 12px 18px;
   height: 72px;
   width: 318px;
   border-radius: 3px;
   border: 1px solid $color-brand-functional-dark-dark;
   box-sizing: border-box;
-
+ 
   &:hover {
     background: $color-brand-functional-dark-dark;
   }
 }
 
-.positionPage-courseCard--title {
+.projectPage-teamCard--title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectPage-teamCard--icon {
   display: flex;
 }
 
-.positionPage-courseCard--icon {
-  margin-right: 12px;
-}
-
-.positionPage-courseCard--duration {
-  font: $additional-text-font;
-  color: $color-brand-secondary-grey-dark;
-  margin-left: 36px;
-}
-
-.positionPage-icon {
+.projectPage-icon {
   color: $color-brand-secondary-grey-dark;
   margin-right: 6px;
   height: 24px;
   width: 24px;
+}
+
+.projectPage-footer {
+  margin-top: 24px;
+  font: $h3-font;
+  color: $color-white;
+}
+
+.projectPage-footer--positionList {
+  margin: 24px -12px 0 -12px;
+}
+
+.projectPage-footer--positionItem {
+  margin: 0 12px;
+}
+
+.projectPage-title--link {
+  color: $color-white;
 }

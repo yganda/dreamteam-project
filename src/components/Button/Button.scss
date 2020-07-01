@@ -20,7 +20,7 @@ $buttom-bg-color-disabled: #e3e7ed;
   box-sizing: border-box;
   color: $color-white;
   border: 1px solid transparent;
-  width: inherit;
+  width: 100%;
 
   &--blue {
     background: $color-brand-primary-blue;
