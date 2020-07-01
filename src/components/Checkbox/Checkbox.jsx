@@ -3,7 +3,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { Checkbox as MaterialCheckbox, FormControlLabel } from '@material-ui/core';
 import { COLORS } from '../../constants';
 import PropTypes from "prop-types"
-import {Button} from "../Button"
 
 const CustomizedCheckbox = withStyles({
   root: {
@@ -34,7 +33,7 @@ const Checkbox = (
   );
 };
 
-Button.propTypes = {
+Checkbox.propTypes = {
   checked: PropTypes.bool,
   label: PropTypes.string,
   name: PropTypes.string,

@@ -17,7 +17,7 @@ const createStore = (history, initialState = {}) => {
     middleware.push(logger);
   }
 
-  return createReduxStore(
+  const store = createReduxStore(
     createRootReducer(history),
     initialState,
     composeEnhancers(
@@ -25,13 +25,15 @@ const createStore = (history, initialState = {}) => {
     )
   );
 
-/*  // Hot reloading
-  if (module.hot) {
+  // Hot reloading
+  if(module.hot) {
     module.hot.accept('../reducers', () => {
-      store.replaceReducer(createRootReducer(history));
+      const nextReducer = require('../reducers');
+      store.replaceReducer(nextReducer);
     });
-  }*/
+  }
 
+  return store;
 };
 
 export default createStore;

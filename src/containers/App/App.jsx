@@ -13,9 +13,9 @@ const App = () => {
       <MainHeader/>
       <div className="childrenContainer">
         <Switch>
-          <Route exact path="/" component={ Home } />
-          <Route exact path="/positions" component={ PositionSearch } />
-          <Route exact path="/positions/:positionId" component={ Position } />
+          <Route exact path="/" render={ props => <Home { ...props } /> } />
+          <Route exact path="/positions" render={ props => <PositionSearch { ...props } /> } />
+          <Route exact path="/positions/:positionId" render={ props => <Position { ...props } /> } />
         </Switch>
       </div>
       <ModalContainer />
