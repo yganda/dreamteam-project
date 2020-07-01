@@ -7,7 +7,7 @@ export const positions = [
     skills: ["Swift", "Xcode"],
     startDate: "July 6, 2020",
     duration: "Duration",
-    applicants: "number",
+    applicants: 3,
     description:
       "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
   },
@@ -19,7 +19,7 @@ export const positions = [
     skills: ["Swift", "Xcode"],
     startDate: "July 6, 2020",
     duration: "Duration",
-    applicants: "number",
+    applicants: 2,
     description:
       "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
   },
@@ -31,7 +31,7 @@ export const positions = [
     skills: ["Xcode"],
     startDate: "July 6, 2020",
     duration: "Duration",
-    applicants: "number",
+    applicants: 1,
     description:
       "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
   },
@@ -43,7 +43,7 @@ export const positions = [
     skills: ["Swift", "Xcode"],
     startDate: "July 6, 2020",
     duration: "Duration",
-    applicants: "number",
+    applicants: null,
     description:
       "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
   },
@@ -55,19 +55,19 @@ export const positions = [
     skills: ["Swift"],
     startDate: "July 6, 2020",
     duration: "Duration",
-    applicants: "number",
+    applicants: null,
     description:
       "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
   },
   {
     id: 666666,
     title: "FE Developer",
-    project: "Dream Team project2 name",
+    project: "Dream Team project name",
     customer: "Startup Jam Inc.",
-    skills: ["React", "Redux"],
+    skills: ["React", "Redux", "HTML", "CSS"],
     startDate: "July 6, 2020",
     duration: "Duration",
-    applicants: "number",
+    applicants: null,
     description:
       "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
   },
@@ -79,8 +79,56 @@ export const positions = [
     skills: ["Java", "Xcode"],
     startDate: "July 6, 2020",
     duration: "Duration",
-    applicants: "number",
+    applicants: 4,
     description:
       "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
-  }
+  },
+  {
+    id: 888888,
+    title: "Java Developer",
+    project: "Dream Team project name",
+    customer: "Startup Jam Inc.",
+    skills: ["Java", "Xcode"],
+    startDate: "July 6, 2020",
+    duration: "Duration",
+    applicants: 1,
+    description:
+      "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
+  },
+  {
+    id: 999999,
+    title: "Java Developer",
+    project: "Dream Team project4 name",
+    customer: "Startup Jam Inc.",
+    skills: ["Java", "Xcode"],
+    startDate: "July 6, 2020",
+    duration: "Duration",
+    applicants: null,
+    description:
+      "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
+  },
+  {
+    id: 101010,
+    title: "QA",
+    project: "Dream Team project name",
+    customer: "Startup Jam Inc.",
+    skills: ["MSQL", "Java"],
+    startDate: "July 6, 2020",
+    duration: "Duration",
+    applicants: null,
+    description:
+      "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
+  },
+  {
+    id: 123123,
+    title: "Java Developer",
+    project: "Dream Team project6 name",
+    customer: "Startup Jam Inc.",
+    skills: ["Java", "Xcode"],
+    startDate: "July 6, 2020",
+    duration: "Duration",
+    applicants: 2,
+    description:
+      "We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. It’s business as usual at Spartez. Join us!",
+  },
 ];
