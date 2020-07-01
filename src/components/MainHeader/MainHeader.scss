@@ -3,11 +3,14 @@
 
 .mainHeader {
   background: $color-brand-functional-dark-light;
-  padding: 12px;
+  padding: 12px 0;
   height: 72px;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+
+.mainHeader-container {
   justify-content: space-between;
 }
 

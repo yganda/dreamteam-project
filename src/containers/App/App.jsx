@@ -11,16 +11,14 @@ const App = () => {
   return (
     <div className="app">
       <MainHeader/>
-      <div className="childrenContainer">
         <Switch>
           <Route exact path="/" component={ Home } />
           <Route exact path="/positions" component={ PositionSearch } />
           <Route exact path="/positions/:positionId" component={ Position } />
         </Switch>
-      </div>
       <ModalContainer />
     </div>
   );
-}
+};
 
 export default App;
