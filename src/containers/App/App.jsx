@@ -11,16 +11,14 @@ const App = () => {
   return (
     <div className="app">
       <MainHeader/>
-      <div className="childrenContainer">
         <Switch>
           <Route exact path="/" render={ props => <Home { ...props } /> } />
           <Route exact path="/positions" render={ props => <PositionSearch { ...props } /> } />
           <Route exact path="/positions/:positionId" render={ props => <Position { ...props } /> } />
         </Switch>
-      </div>
       <ModalContainer />
     </div>
   );
-}
+};
 
 export default App;
