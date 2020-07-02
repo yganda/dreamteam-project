@@ -6,9 +6,8 @@ import { ReactComponent as CardImage } from '../../assets/card-icon.svg';
 import { ReactComponent as NewsImage } from '../../assets/news-icon.svg';
 import './Home.scss';
 
-const HOME_PAGE_HEADER_CONTENT = "Drive your career making great things here";
 const PROJECT_BTN_CONTENT = "Post a project";
-const POSITION_BTN_CONTENT = "Find a project";
+const POSITION_BTN_CONTENT = "Find a position";
 
 const Home = () => {
   const history = useHistory();
