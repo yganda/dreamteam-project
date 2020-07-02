@@ -31,7 +31,7 @@ const Project = (props) => {
     () => {
       setIsApplied(false)
     },
-    [project]
+    [project, props.user]
   );
 
   const handleClick = () =>

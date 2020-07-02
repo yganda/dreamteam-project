@@ -45,7 +45,7 @@ const Position = (props) => {
     () => {
       setIsApplied(false)
     },
-    [position]
+    [position, props.user]
   );
 
   const currentProject = projects.find((item) => item.id === project.id);
