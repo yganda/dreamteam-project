@@ -26,6 +26,16 @@
     height: 24px;
   }
 }
+.positionPage-buttonMsg {
+  display: flex;
+  justify-content: center;
+
+  &--icon {
+    margin-right: 6px;
+    height: 20px;
+    width: auto;
+  }
+}
 
 .positionPage-title {
   font: $h1-font;

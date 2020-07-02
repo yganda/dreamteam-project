@@ -46,12 +46,12 @@ export const projects = [
     title: "Earthjustice",
     stage: "MVP",
     customer: "Earthjustice Inc.",
-    skills: ["Java", "Project Management", "Angular", "QA", "UX"],
+    skills: ["Java", "Angular", "QA", "UX"],
     peopleApplied: 3,
     teamCount: 7,
     startDate: "July 6, 2020",
     duration: "6 month",
-    description: "Event App",
+    description: "Development of an event platform for Earthjustice.",
     fullDescription:
       "Hosting your own event about Earthjustice gives people the space to meet each other, talk about the issues at stake, and meaningfully connect. (See types of events you can host). This is your opportunity to celebrate and share your passion with your friends — and to get them as inspired and excited as you about why the earth needs a good lawyer. By introducing your friends and networks to Earthjustice, you'll be supporting our work and providing reassurance to your friends that, above the turmoil of the daily news, Earthjustice's 130 environmental attorneys are working in courts throughout the country — and winning, on the facts and the law — on behalf of hundreds of public-interest clients.",
     domain: "Events",
@@ -94,7 +94,7 @@ export const projects = [
     startDate: "July 16, 2020",
     duration: "3 month",
     description:
-      "Development of a charity platform.",
+      "Development of a charity platform for Project Sunshine.",
     fullDescription:
       "The overall aim of this project is to build an application that helps charities (large or small) to gain more donations, and to reduce door to door collections. To achieve this aim it will involve completing the objective of designing and developing a web application.",
     domain: "Charity",

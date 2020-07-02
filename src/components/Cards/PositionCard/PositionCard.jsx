@@ -1,13 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { InfoPanel } from '../../InfoPanel/InfoPanel';
-import { SkillTag } from '../../SkillTag/SkillTag';
-import './PositionCard.scss';
-import EventIcon from '@material-ui/icons/Event';
-import WorkRoundedIcon from '@material-ui/icons/WorkRounded';
+import React from "react";
+import PropTypes from "prop-types";
+import { InfoPanel } from "../../InfoPanel/InfoPanel";
+import { SkillTag } from "../../SkillTag/SkillTag";
+import "./PositionCard.scss";
+import EventIcon from "@material-ui/icons/Event";
+import WorkRoundedIcon from "@material-ui/icons/WorkRounded";
+import uuidv4 from "uuid/v4";
 
-const startDateLabel = 'Start date';
-const customerLabel = 'Customer';
+const startDateLabel = "Start date";
+const customerLabel = "Customer";
 
 export const PositionCard = ({ position }) => {
   const { title, project, skills, startDate } = position;
@@ -15,7 +16,7 @@ export const PositionCard = ({ position }) => {
   const renderSkills = () => {
     return skills.map((skill) => {
       return (
-        <div className="positionCard-skillItem">
+        <div key={uuidv4()} className="positionCard-skillItem">
           <SkillTag>{skill}</SkillTag>
         </div>
       );
@@ -58,11 +59,11 @@ export const PositionCard = ({ position }) => {
 PositionCard.propTypes = {
   position: PropTypes.shape({
     title: PropTypes.string,
-    project: PropTypes.string,
+    project: PropTypes.object,
     customer: PropTypes.string,
     skills: PropTypes.arrayOf(PropTypes.string),
     startDate: PropTypes.string,
     duration: PropTypes.string,
-    applicants: PropTypes.number
+    applicants: PropTypes.number,
   }),
 };

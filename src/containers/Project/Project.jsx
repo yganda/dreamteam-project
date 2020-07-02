@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { InfoPanel } from "../../components/InfoPanel";
 import { Button } from "../../components/Button";
 import { ProjectCard } from "../../components/Cards/ProjectCard";
@@ -9,42 +9,52 @@ import { projects } from "../../mocks/projects";
 import { Icon } from "@iconify/react";
 import accountCheck from "@iconify/icons-mdi/account-check";
 import arrowLeft from "@iconify/icons-mdi/arrow-left";
-
+import checkIcon from "@iconify/icons-mdi/check";
+import uuidv4 from "uuid/v4";
 import { Link } from "react-router-dom";
+import { connect, useDispatch } from "react-redux";
+import { showModal } from "../../actions/modalActions";
+import { MODAL_TYPES } from "../../constants";
 
 import "./Project.scss";
 
-export const Project = (props) => {
-  const position = {
-    id: 111111,
-    title: "iOS Developer",
-    project: "Dream Team project name",
-    projectId: 151515,
-    customer: "Startup Jam Inc.",
-    skills: ["Swift", "Xcode"],
-    desiredSkills: ["Problem solving"],
-    startDate: "July 6, 2020",
-    duration: "13 weeks",
-    applicants: 3,
-    description: `We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. 
-      It’s business as usual at Spartez. Join us!`,
-    courses: [{ name: "", link: "", icon: "linkedinIcon" }],
-  };
-console.log(props);
+const Project = (props) => {
   const project = projects.find(
     (item) => item.id === props.match.params.projectId
   );
   const { id, title, skills, description, fullDescription, team } = project;
 
-  const backTxt = `Back to ${position.title} position`;
+  const [isApplied, setIsApplied] = useState();
+  const dispatch = useDispatch();
+
+  useEffect(
+    () => {
+      setIsApplied(false)
+    },
+    [project]
+  );
+
+  const handleClick = () =>
+    props.user ? setIsApplied(true) : dispatch(showModal(MODAL_TYPES.SIGN_IN));
+
+  const backTxt = `Back to previous page`;
   const projectDescrTxt = "Project description";
   const teamTxt = "Team";
   const similarProjectsTxt = "Similar projects";
 
+  const buttonMsg = isApplied ? (
+    <div className="projectPage-buttonMsg">
+      <Icon icon={checkIcon} className="projectPage-buttonMsg--icon" />
+      {"Succesfully applied"}
+    </div>
+  ) : (
+    "Apply without position"
+  );
+
   const renderSkills = (skills) => {
     return skills.map((skill) => {
       return (
-        <div className="projectPage-skillItem">
+        <div key={uuidv4()} className="projectPage-skillItem">
           <SkillTag>{skill}</SkillTag>
         </div>
       );
@@ -56,6 +66,7 @@ console.log(props);
       const teamMember = positions.find((item) => item.id === position);
       return (
         <Link
+          key={uuidv4()}
           className="projectPage-teamCard"
           to={`/positions/${teamMember.id}`}
         >
@@ -106,7 +117,11 @@ console.log(props);
     <section className="projectPage-wrapper">
       <div className="projectPage">
         <header>
-          <Link className="projectPage-backLink">
+          <Link
+            to="#"
+            className="projectPage-backLink"
+            onClick={props.history.goBack}
+          >
             <Icon icon={arrowLeft} className="projectPage-backLink--icon" />
             {backTxt}
           </Link>
@@ -129,7 +144,12 @@ console.log(props);
           <div className="projectPage-main--right">
             <ProjectDetails project={project} isFullView />
             <div className="projectPage-main--indents">
-              <Button color="blue">{`Apply for ${title} role`}</Button>
+              <Button
+                color={isApplied ? "green" : "blue"}
+                onClick={handleClick}
+              >
+                {buttonMsg}
+              </Button>
             </div>
           </div>
         </main>
@@ -143,3 +163,9 @@ console.log(props);
     </section>
   );
 };
+
+const mapStateToProps = (state) => ({
+  user: state.userAccount.user,
+});
+
+export default connect(mapStateToProps, null)(Project);

@@ -37,7 +37,7 @@ export const ProjectDetails = ({ project, isFullView = false }) => {
 
   const renderCoordinators = () => {
     return coordinators.map((person) => (
-      <Link className="projectDetails-link" key={person.id}>{person.fullName}</Link>
+      <Link to="#"className="projectDetails-link" key={person.id}>{person.fullName}</Link>
     ));
   };
 
