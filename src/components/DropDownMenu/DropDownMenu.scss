@@ -1,0 +1,39 @@
+@import '../../styles/variables/colors';
+@import '../../styles/variables/typography';
+
+.dropdown-menu {
+  position: relative;
+  box-sizing: border-box;
+
+  &__toggle {
+    color: $color-brand-secondary-grey-dark;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    right: 0;
+    width: 187px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: $color-brand-functional-dark-light;
+    border-radius: 3px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px 0 $color-brand-functional-dark-dark;
+  }
+
+  &__list-item {
+    &:first-child {
+      padding: 24px 12px 12px;
+    }
+    padding: 12px 12px 24px;
+    font: $regular-font;
+    color: $color-white;
+    cursor: pointer;
+  }
+}

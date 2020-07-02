@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { Close, Visibility } from '@material-ui/icons';
 import { closeModal } from '../../actions/modalActions';
 import { InputField } from '../../components/InputField';
@@ -10,6 +10,7 @@ import { ReactComponent as GoogleLogo } from '../../assets/google-icon.svg';
 import { ReactComponent as FacebookLogo } from '../../assets/facebook-icon.svg';
 import { ReactComponent as LinkedInLogo } from '../../assets/linkedin-icon.svg';
 import { ReactComponent as EpamLogo } from '../../assets/epam-icon.svg';
+import { signInUser } from '../../actions/signInActions';
 import './SignInForm.scss';
 
 
@@ -19,12 +20,32 @@ const FORGOT_PASSWORD = 'Forgot password?';
 const REGISTER_NOW = 'Register now';
 const SIGN_IN_BTN = 'Sign in';
 
-const SignInForm = () => {
+const SignInForm = ({ user }) => {
   const [isChecked, setIsChecked] = useState(true);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  // <---  FAKE AUTH  --->
+  // <---FOR DEMO ONLY--->
   const dispatch = useDispatch();
   const handleModalClose = () => dispatch(closeModal());
+  useEffect(
+    () => {
+      if (user) handleModalClose()
+    },
+    [handleModalClose, user]
+  );
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    if (name === 'email') setEmail(value);
+    if (name === 'password') setPassword(value);
+  };
   const handleIsChecked = () => setIsChecked(!isChecked);
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    dispatch(signInUser(email, password));
+  }
   const extraInputLabel = <Link to="#" className="signin-form__forgot-password">{FORGOT_PASSWORD}</Link>;
+  const isBtnDisabled = !email || !password;
 
   return (
     <div className="signin-form">
@@ -36,12 +57,19 @@ const SignInForm = () => {
         <EpamLogo />
       </section>
       <form className="signin-form__fields">
-        <InputField type="email" inputLabel="Email" />
+        <InputField
+          type="email"
+          inputLabel="Email"
+          name="email"
+          onInputChange={ handleChange }
+        />
         <InputField
           type="password"
           extraLabel={ extraInputLabel }
           inputLabel="Password"
           inputIcon={ <Visibility /> }
+          name="password"
+          onInputChange={ handleChange }
         />
         <div className="signin-form__remember-user">
           <Checkbox
@@ -52,8 +80,8 @@ const SignInForm = () => {
           />
         </div>
         <div className="signin-form__buttons">
-          <Button className="signin-form__signin-btn" noBgr={ true }>{REGISTER_NOW}</Button>
-          <Button className="signin-form__signin-btn">{SIGN_IN_BTN}</Button>
+          <Button className="signin-form__signin-btn register" noBgr={true}>{REGISTER_NOW}</Button>
+          <Button className="signin-form__signin-btn" disabled={isBtnDisabled} onClick={handleSignIn}>{SIGN_IN_BTN}</Button>
         </div>
       </form>
       <Close className="signin-form__close-icon" onClick={ handleModalClose } />
@@ -61,4 +89,8 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+const mapStateToProps = (state) => ({
+  user: state.userAccount.user,
+});
+
+export default connect(mapStateToProps, null)(SignInForm);

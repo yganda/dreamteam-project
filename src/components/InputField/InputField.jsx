@@ -10,9 +10,9 @@ export const InputField = ({
   inputIcon,
   inputLabel,
   inputType = InputField.INPUT_TYPES.TEXT,
+  name,
   onInputChange,
   value,
-  ...props
 }) => {
   const classes = clsx(
     'input-field', className, {
@@ -31,7 +31,7 @@ export const InputField = ({
           onChange={ onInputChange }
           type={ inputType }
           value={ value }
-          { ...props }
+          name={ name }
         />
         { inputIcon ? <div className="input-field__icon">{ inputIcon }</div> : null }
       </div>

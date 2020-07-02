@@ -16,7 +16,7 @@ const Home = () => {
     history.push('/positions');
   };
   return (
-      <section>
+      <section className="home-page__container">
           <div className="main-container">
               <div className="home-page__first-block">
                   <div className="home-page__first-block--content">
