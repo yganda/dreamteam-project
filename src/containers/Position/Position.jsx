@@ -6,6 +6,7 @@ import { PositionCard } from "../../components/Cards/PositionCard";
 import { PositionDetails } from "../../components/Details/PositionDetails";
 import { ProjectDetails } from "../../components/Details/ProjectDetails";
 import { SkillTag } from "../../components/SkillTag";
+import NotFoundPage from '../../containers/NotFoundPage';
 import { positions } from "../../mocks/positions";
 import { projects } from "../../mocks/projects";
 import { courses } from "../../mocks/courses";
@@ -37,6 +38,9 @@ const Position = (props) => {
   const position = positions.find(
     (item) => item.id === props.match.params.positionId
   );
+
+  if (!position) return <NotFoundPage />;
+
   const { id, title, project, skills, description, desiredSkills } = position;
 
   const [isApplied, setIsApplied] = useState();
