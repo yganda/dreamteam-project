@@ -19,30 +19,93 @@
   height: 48px;
   width: 150px;
   align-items: center;
-}
-.mainHeader-logo--img {
-  width: 48px;
-  height: 48px;
-  background: $color-brand-primary-blue;
-  border-radius: 3px;
-  box-sizing: border-box;
-  margin-right: 18px;
+
+  &--img {
+    width: 48px;
+    height: 48px;
+    background: $color-brand-primary-blue;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-right: 18px;
+  }
+
+  &--txt {
+    color: $color-white;
+    font: $h2-logo-font;
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
-.mainHeader-logo--txt {
-  color: $color-white;
-  font: $h2-logo-font;
-  display: inline-block;
-  vertical-align: middle;
-}
+.mainHeader {
+  &__sign-in {
+    display: flex;
+    align-items: center;
 
-.mainHeader-logIn--txt{
-  color: $color-brand-secondary-grey-dark;
-  margin-right: 32px;
-  font: $l1-font;
-}
+    &--txt {
+      color: $color-brand-secondary-grey-dark;
+      margin-right: 32px;
+      font: $l1-font;
+    }
 
-.mainHeader-logIn--btn {
-  width: 98px;
-  display: inline-block;
+    &--btn {
+      width: 98px;
+      display: inline-block;
+    }
+
+    &--menu-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px;
+
+      &:hover {
+        background-color: $color-brand-functional-dark-dark;
+        border-radius: 3px;
+      }
+
+      &.opened {
+        background-color: $color-brand-functional-dark-dark;
+        border-radius: 3px;
+      }
+    }
+
+    &--notification {
+      margin-right: 18px;
+      color: $color-brand-secondary-grey-dark;
+    }
+
+    &--user-menu {
+      margin: 0;
+      padding-right: 19px;
+      font: $h3-font;
+      color: $color-white;
+
+      &.opened {
+
+      }
+    }
+
+    &--menu-list {
+      top: 40px;
+      right: -12px;
+      width: 200px;
+      border-radius: 3px;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          background-color: $color-brand-secondary-grey-darkest;
+          border-radius: 3px;
+        }
+
+        svg {
+          color: $color-brand-secondary-grey-dark;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
 }

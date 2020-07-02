@@ -59,5 +59,18 @@
 
   &__signin-btn {
     flex: 40% 0;
+
+    &.register {
+      &:hover {
+        background-color: $color-brand-secondary-grey-darkest;
+      }
+      &:active {
+        background-color: $color-brand-functional-dark-dark;
+      }
+    }
+
+    &.button--disabled {
+      background: $color-brand-primary-blue-light;
+    }
   }
 }

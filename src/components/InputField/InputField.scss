@@ -30,6 +30,11 @@
     }
   }
 
+  input[type="password"] {
+    font: caption;
+    line-height: 24px;
+  }
+
   &--disabled input {
     background-color: $color-brand-secondary-grey-darkest;
   }

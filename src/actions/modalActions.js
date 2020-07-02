@@ -6,9 +6,10 @@ export const MODAL_ACTION_TYPES = {
 
 // actions
 export const closeModal = () => ({
-  type: MODAL_ACTION_TYPES.CLOSE_MODAL
+  type: MODAL_ACTION_TYPES.CLOSE_MODAL,
 });
 
 export const showModal = (modalType) => ({
-  type: MODAL_ACTION_TYPES.SHOW_MODAL, modalType
+  type: MODAL_ACTION_TYPES.SHOW_MODAL,
+  modalType,
 });
