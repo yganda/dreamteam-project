@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { InfoPanel } from "../../components/InfoPanel";
 import { Button } from "../../components/Button";
 import { ProjectCard } from "../../components/Cards/ProjectCard";
@@ -24,8 +24,15 @@ const Project = (props) => {
   );
   const { id, title, skills, description, fullDescription, team } = project;
 
-  const [isApplied, setIsApplied] = useState(false);
+  const [isApplied, setIsApplied] = useState();
   const dispatch = useDispatch();
+
+  useEffect(
+    () => {
+      setIsApplied(false)
+    },
+    [project]
+  );
 
   const handleClick = () =>
     props.user ? setIsApplied(true) : dispatch(showModal(MODAL_TYPES.SIGN_IN));

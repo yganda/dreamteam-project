@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { InfoPanel } from "../../components/InfoPanel";
 import { Button } from "../../components/Button";
@@ -39,7 +39,14 @@ const Position = (props) => {
   );
   const { id, title, project, skills, description, desiredSkills } = position;
 
-  const [isApplied, setIsApplied] = useState(false);
+  const [isApplied, setIsApplied] = useState();
+
+  useEffect(
+    () => {
+      setIsApplied(false)
+    },
+    [position]
+  );
 
   const currentProject = projects.find((item) => item.id === project.id);
 
