@@ -24,9 +24,6 @@ const Project = (props) => {
     (item) => item.id === props.match.params.projectId
   );
 
-  if (!project) return <NotFoundPage />;
-  const { id, title, skills, description, fullDescription, team } = project;
-
   const [isApplied, setIsApplied] = useState();
   const dispatch = useDispatch();
 
@@ -34,8 +31,12 @@ const Project = (props) => {
     () => {
       setIsApplied(false)
     },
-    [project]
+    [project, props.user]
   );
+
+  if (!project) return <NotFoundPage />;
+  const { id, title, skills, description, fullDescription, team } = project;
+
 
   const handleClick = () =>
     props.user ? setIsApplied(true) : dispatch(showModal(MODAL_TYPES.SIGN_IN));
