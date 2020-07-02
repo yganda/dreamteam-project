@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '../../components/Button';
 import { Filter } from '../../components/Filter';
 import { PositionCard } from '../../components/Cards/PositionCard/PositionCard';
+import { positions } from '../../mocks/positions';
 import './PositionSearch.scss';
 import { Icon } from "@iconify/react";
 import searchOutlined from '@iconify/icons-mdi/search';
@@ -79,11 +80,9 @@ const PositionSearch = (props) => {
             </div>
           </div>
           <div className="position-search_filtered-results">
-            <PositionCard position={position}/>
-            <PositionCard position={position}/>
-            <PositionCard position={position}/>
-            <PositionCard position={position}/>
-            <PositionCard position={position}/>
+            {positions.map((position, index) => {
+              return <PositionCard key={index} position={position}/>
+            })}
           </div>
         </div>
       </div>
