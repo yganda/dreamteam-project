@@ -39,9 +39,7 @@ const Position = (props) => {
     (item) => item.id === props.match.params.positionId
   );
 
-  if (!position) return <NotFoundPage />;
-
-  const { id, title, project, skills, description, desiredSkills } = position;
+  const dispatch = useDispatch();
 
   const [isApplied, setIsApplied] = useState();
 
@@ -49,12 +47,14 @@ const Position = (props) => {
     () => {
       setIsApplied(false)
     },
-    [position]
+    [position, props.user]
   );
 
-  const currentProject = projects.find((item) => item.id === project.id);
+  if (!position) return <NotFoundPage />;
 
-  const dispatch = useDispatch();
+  const { id, title, project, skills, description, desiredSkills } = position;
+
+  const currentProject = projects.find((item) => item.id === project.id);
 
   const handleClick = () =>
     props.user ? setIsApplied(true) : dispatch(showModal(MODAL_TYPES.SIGN_IN));

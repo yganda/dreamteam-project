@@ -7,7 +7,7 @@ import { ReactComponent as NewsImage } from '../../assets/news-icon.svg';
 import './Home.scss';
 
 const PROJECT_BTN_CONTENT = "Post a project";
-const POSITION_BTN_CONTENT = "Find a project";
+const POSITION_BTN_CONTENT = "Find a position";
 
 const Home = () => {
   const history = useHistory();
