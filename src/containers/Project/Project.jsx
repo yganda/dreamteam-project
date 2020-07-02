@@ -8,13 +8,13 @@ import { positions } from "../../mocks/positions";
 import { projects } from "../../mocks/projects";
 import { Icon } from "@iconify/react";
 import accountCheck from "@iconify/icons-mdi/account-check";
-import arrowLeft from '@iconify/icons-mdi/arrow-left';
+import arrowLeft from "@iconify/icons-mdi/arrow-left";
 
 import { Link } from "react-router-dom";
 
 import "./Project.scss";
 
-export const Project = () => {
+export const Project = (props) => {
   const position = {
     id: 111111,
     title: "iOS Developer",
@@ -30,37 +30,11 @@ export const Project = () => {
       It’s business as usual at Spartez. Join us!`,
     courses: [{ name: "", link: "", icon: "linkedinIcon" }],
   };
-
-  const project = {
-    id: 151515,
-    title: "Dream team project name",
-    stage: "MVP",
-    customer: "Startup Jam Inc.",
-    skills: ["Java", ".NET", "CSS", "UX"],
-    peopleApplied: 3,
-    teamCount: 24,
-    startDate: "July 6, 2020",
-    duration: "13 weeks",
-    description:
-      "Development of a platform for the search for charity projects.",
-    fullDescription: `We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. 
-      It’s business as usual at Spartez. Join us!`,
-    domain: "Education",
-    coordinators: [
-      { id: 252525, fullName: "Klim Starykau" },
-      { id: 234569, fullName: "Andrei Furs" },
-    ],
-    team: [111111, 666666, 888888, 101010],
-  };
-
-  const {
-    id,
-    title,
-    skills,
-    description,
-    fullDescription,
-    team
-  } = project;
+console.log(props);
+  const project = projects.find(
+    (item) => item.id === props.match.params.projectId
+  );
+  const { id, title, skills, description, fullDescription, team } = project;
 
   const backTxt = `Back to ${position.title} position`;
   const projectDescrTxt = "Project description";
@@ -88,7 +62,7 @@ export const Project = () => {
           <div className="projectPage-teamCard--content">
             <div className="projectPage-teamCard--title">
               {teamMember.title}
-              {teamMember.applicants && (
+              {teamMember.applicants > 0 && (
                 <div className="projectPage-teamCard--icon">
                   <Icon icon={accountCheck} className="projectPage-icon" />
                   {teamMember.applicants}
@@ -117,8 +91,6 @@ export const Project = () => {
       .sort((a, b) => b.skillsCount - a.skillsCount)
       .slice(0, 4);
 
-    console.log(filteredPositionList);
-
     return filteredPositionList.map((project) => (
       <Link
         className="projectPage-footer--positionItem"
@@ -131,39 +103,43 @@ export const Project = () => {
   };
 
   return (
-    <div className="projectPage">
-      <header>
-        <Link className="projectPage-backLink">
-          <Icon icon={arrowLeft} className="projectPage-backLink--icon" />
-          {backTxt}
-        </Link>
-        <div className="projectPage-title">{title}</div>
-        <div className="projectPage-description">{description}</div>
-      </header>
-      <main className="projectPage-main">
-        <InfoPanel>
-          <div className="projectPage-main--left">
-            <div className="projectPage-main--title">{projectDescrTxt}</div>
-            <div className="projectPage-main--projectDescription">
-              {fullDescription}
+    <section className="projectPage-wrapper">
+      <div className="projectPage">
+        <header>
+          <Link className="projectPage-backLink">
+            <Icon icon={arrowLeft} className="projectPage-backLink--icon" />
+            {backTxt}
+          </Link>
+          <div className="projectPage-title">{title}</div>
+          <div className="projectPage-description">{description}</div>
+        </header>
+        <main className="projectPage-main">
+          <InfoPanel>
+            <div className="projectPage-main--left">
+              <div className="projectPage-main--title">{projectDescrTxt}</div>
+              <div className="projectPage-main--projectDescription">
+                {fullDescription}
+              </div>
+              <div className="projectPage-main--title">{teamTxt}</div>
+              <div className="projectPage-main--teamWrapper">
+                {renderTeam()}
+              </div>
             </div>
-            <div className="projectPage-main--title">{teamTxt}</div>
-            <div className="projectPage-main--teamWrapper">{renderTeam()}</div>
+          </InfoPanel>
+          <div className="projectPage-main--right">
+            <ProjectDetails project={project} isFullView />
+            <div className="projectPage-main--indents">
+              <Button color="blue">{`Apply for ${title} role`}</Button>
+            </div>
           </div>
-        </InfoPanel>
-        <div className="projectPage-main--right">
-          <ProjectDetails project={project} isFullView />
-          <div className="projectPage-main--indents">
-            <Button color="blue">{`Apply for ${title} role`}</Button>
+        </main>
+        <footer className="projectPage-footer">
+          {similarProjectsTxt}
+          <div className="projectPage-footer--positionList">
+            {renderProjectList()}
           </div>
-        </div>
-      </main>
-      <footer className="projectPage-footer">
-        {similarProjectsTxt}
-        <div className="projectPage-footer--positionList">
-          {renderProjectList()}
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </section>
   );
 };
