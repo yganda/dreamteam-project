@@ -1162,7 +1162,7 @@
 
 "@emotion/core@^10.0.20", "@emotion/core@^10.0.27":
   version "10.0.28"
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/@emotion/core/-/core-10.0.28.tgz#bb65af7262a234593a9e952c041d0f1c9b9bef3d"
+  resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.28.tgz#bb65af7262a234593a9e952c041d0f1c9b9bef3d"
   integrity sha512-pH8UueKYO5jgg0Iq+AmCLxBsvuGtvlmiDCOuv8fGNYn3cowFpLN98L8zO56U0H1PjDIyAlXymgL3Wu7u7v6hbA==
   dependencies:
     "@babel/runtime" "^7.5.5"
@@ -1226,7 +1226,7 @@
 
 "@emotion/styled@^10.0.17", "@emotion/styled@^10.0.27":
   version "10.0.27"
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/@emotion/styled/-/styled-10.0.27.tgz#12cb67e91f7ad7431e1875b1d83a94b814133eaf"
+  resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-10.0.27.tgz#12cb67e91f7ad7431e1875b1d83a94b814133eaf"
   integrity sha512-iK/8Sh7+NLJzyp9a5+vIQIXTYxfT4yB/OJbjzQanB2RZpvmzBQOHZWhpAMZWYEKRNNbsD6WfBw5sVWkb6WzS/Q==
   dependencies:
     "@emotion/styled-base" "^10.0.27"
@@ -5313,11 +5313,7 @@ elliptic@^6.0.0, elliptic@^6.5.2:
 
 email-addresses@^3.0.1:
   version "3.1.0"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/email-addresses/-/email-addresses-3.1.0.tgz#cabf7e085cbdb63008a70319a74e6136188812fb"
-=======
   resolved "https://registry.yarnpkg.com/email-addresses/-/email-addresses-3.1.0.tgz#cabf7e085cbdb63008a70319a74e6136188812fb"
->>>>>>> develop
   integrity sha512-k0/r7GrWVL32kZlGwfPNgB2Y/mMXVTq/decgLczm/j34whdaspNrZO8CnXPf1laaHxI6ptUlsnAxN+UAPw+fzg==
 
 emoji-regex@^7.0.1, emoji-regex@^7.0.2:
@@ -6015,20 +6011,12 @@ file-uri-to-path@1.0.0:
 
 filename-reserved-regex@^1.0.0:
   version "1.0.0"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/filename-reserved-regex/-/filename-reserved-regex-1.0.0.tgz#e61cf805f0de1c984567d0386dc5df50ee5af7e4"
-=======
   resolved "https://registry.yarnpkg.com/filename-reserved-regex/-/filename-reserved-regex-1.0.0.tgz#e61cf805f0de1c984567d0386dc5df50ee5af7e4"
->>>>>>> develop
   integrity sha1-5hz4BfDeHJhFZ9A4bcXfUO5a9+Q=
 
 filenamify-url@^1.0.0:
   version "1.0.0"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/filenamify-url/-/filenamify-url-1.0.0.tgz#b32bd81319ef5863b73078bed50f46a4f7975f50"
-=======
   resolved "https://registry.yarnpkg.com/filenamify-url/-/filenamify-url-1.0.0.tgz#b32bd81319ef5863b73078bed50f46a4f7975f50"
->>>>>>> develop
   integrity sha1-syvYExnvWGO3MHi+1Q9GpPeXX1A=
   dependencies:
     filenamify "^1.0.0"
@@ -6036,11 +6024,7 @@ filenamify-url@^1.0.0:
 
 filenamify@^1.0.0:
   version "1.2.1"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/filenamify/-/filenamify-1.2.1.tgz#a9f2ffd11c503bed300015029272378f1f1365a5"
-=======
   resolved "https://registry.yarnpkg.com/filenamify/-/filenamify-1.2.1.tgz#a9f2ffd11c503bed300015029272378f1f1365a5"
->>>>>>> develop
   integrity sha1-qfL/0RxQO+0wABUCknI3jx8TZaU=
   dependencies:
     filename-reserved-regex "^1.0.0"
@@ -6459,11 +6443,7 @@ getpass@^0.1.1:
 
 gh-pages@^3.1.0:
   version "3.1.0"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/gh-pages/-/gh-pages-3.1.0.tgz#ec3ed0f6a6e3fc3d888758fa018f08191c96bd55"
-=======
   resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-3.1.0.tgz#ec3ed0f6a6e3fc3d888758fa018f08191c96bd55"
->>>>>>> develop
   integrity sha512-3b1rly9kuf3/dXsT8+ZxP0UhNLOo1CItj+3e31yUVcaph/yDsJ9RzD7JOw5o5zpBTJVQLlJAASNkUfepi9fe2w==
   dependencies:
     async "^2.6.1"
@@ -6966,11 +6946,7 @@ https-browserify@^1.0.0:
 
 humanize-url@^1.0.0:
   version "1.0.1"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/humanize-url/-/humanize-url-1.0.1.tgz#f4ab99e0d288174ca4e1e50407c55fbae464efff"
-=======
   resolved "https://registry.yarnpkg.com/humanize-url/-/humanize-url-1.0.1.tgz#f4ab99e0d288174ca4e1e50407c55fbae464efff"
->>>>>>> develop
   integrity sha1-9KuZ4NKIF0yk4eUEB8VfuuRk7/8=
   dependencies:
     normalize-url "^1.0.0"
@@ -11087,11 +11063,7 @@ react-draggable@^4.0.3:
 
 react-dropdown-select@^4.4.2:
   version "4.4.2"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/react-dropdown-select/-/react-dropdown-select-4.4.2.tgz#7e9d04f9d5e1e93183cb420da118ee974d6a1cbf"
-=======
   resolved "https://registry.yarnpkg.com/react-dropdown-select/-/react-dropdown-select-4.4.2.tgz#7e9d04f9d5e1e93183cb420da118ee974d6a1cbf"
->>>>>>> develop
   integrity sha512-E+VLasZf7v6x+GIzwg/p5NayIGyAajIQ7V6Vn2Jm3UsFQ+8zJARhO4Rz7FFnvgb91uStuNPpzuzLa/bdAyUeVQ==
   dependencies:
     "@emotion/core" "^10.0.27"
@@ -12708,22 +12680,14 @@ strip-json-comments@^3.0.1:
 
 strip-outer@^1.0.0:
   version "1.0.1"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/strip-outer/-/strip-outer-1.0.1.tgz#b2fd2abf6604b9d1e6013057195df836b8a9d631"
-=======
   resolved "https://registry.yarnpkg.com/strip-outer/-/strip-outer-1.0.1.tgz#b2fd2abf6604b9d1e6013057195df836b8a9d631"
->>>>>>> develop
   integrity sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==
   dependencies:
     escape-string-regexp "^1.0.2"
 
 strip-url-auth@^1.0.0:
   version "1.0.1"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/strip-url-auth/-/strip-url-auth-1.0.1.tgz#22b0fa3a41385b33be3f331551bbb837fa0cd7ae"
-=======
   resolved "https://registry.yarnpkg.com/strip-url-auth/-/strip-url-auth-1.0.1.tgz#22b0fa3a41385b33be3f331551bbb837fa0cd7ae"
->>>>>>> develop
   integrity sha1-IrD6OkE4WzO+PzMVUbu4N/oM164=
 
 style-loader@0.23.1:
@@ -13072,11 +13036,7 @@ trim-newlines@^1.0.0:
 
 trim-repeated@^1.0.0:
   version "1.0.0"
-<<<<<<< HEAD
-  resolved "http://build-nexus.corp.globoforce.com:8081/nexus/content/groups/npm-gf-all/trim-repeated/-/trim-repeated-1.0.0.tgz#e3646a2ea4e891312bf7eace6cfb05380bc01c21"
-=======
   resolved "https://registry.yarnpkg.com/trim-repeated/-/trim-repeated-1.0.0.tgz#e3646a2ea4e891312bf7eace6cfb05380bc01c21"
->>>>>>> develop
   integrity sha1-42RqLqTokTEr9+rObPsFOAvAHCE=
   dependencies:
     escape-string-regexp "^1.0.2"
