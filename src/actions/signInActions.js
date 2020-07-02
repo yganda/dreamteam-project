@@ -8,6 +8,9 @@ export const SIGN_IN_ACTION_TYPES = {
   SIGN_IN_USER_BEGIN: 'SIGN_IN_USER_BEGIN',
   SIGN_IN_USER_SUCCESS: 'SIGN_IN_USER_SUCCESS',
   SIGN_IN_USER_FAILURE: 'SIGN_IN_USER_FAILURE',
+  SIGN_OUT_USER_BEGIN: 'SIGN_OUT_USER_BEGIN',
+  SIGN_OUT_USER_SUCCESS: 'SIGN_OUT_USER_SUCCESS',
+  SIGN_OUT_USER_FAILURE: 'SIGN_OUT_USER_FAILURE',
 };
 
 // actions
@@ -39,6 +42,19 @@ export const signInUserFailure = (error) => ({
   error,
 });
 
+export const signOutUserBegin = () => ({
+  type: SIGN_IN_ACTION_TYPES.SIGN_OUT_USER_BEGIN,
+});
+
+export const signOutUserSuccess = () => ({
+  type: SIGN_IN_ACTION_TYPES.SIGN_OUT_USER_SUCCESS,
+});
+
+export const signOutUserFailure = (error) => ({
+  type: SIGN_IN_ACTION_TYPES.SIGN_OUT_USER_FAILURE,
+  error,
+});
+
 // <---  FAKE AUTH  --->
 // <---FOR DEMO ONLY--->
 export const signInUser = (email, password) => dispatch => {
@@ -48,3 +64,12 @@ export const signInUser = (email, password) => dispatch => {
     .then(({ user }) => dispatch(signInUserSuccess(user)))
     .catch(error => dispatch(signInUserFailure(error)));
 };
+
+export const signOutUser = () => dispatch => {
+  dispatch(signOutUserBegin());
+  return fakeAuth
+    .signout()
+    .then(() => dispatch(signOutUserSuccess()))
+    .catch(error => dispatch(signOutUserFailure(error)))
+};
+

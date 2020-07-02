@@ -6,6 +6,7 @@ import { Person, Notifications } from '@material-ui/icons';
 import logout from '@iconify/icons-mdi/logout';
 import clsx from 'clsx';
 import { MODAL_TYPES } from '../../constants';
+import { signOutUser } from '../../actions/signInActions';
 import { Button } from '../Button/Button';
 import DropDownMenu from '../DropDownMenu';
 import { showModal } from '../../actions/modalActions';
@@ -14,7 +15,7 @@ import './MainHeader.scss';
 const LogoTxt = 'Logo';
 const JoinTxt = 'Join Us';
 const ButtonTxt = 'Sign In';
-const userName = 'Klim Starykau';
+const userName = 'Klim Starykau'; // mock
 
 const MainHeader = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,24 +23,34 @@ const MainHeader = ({ user }) => {
   const dispatch = useDispatch();
   const handleClick = () => dispatch(showModal(MODAL_TYPES.SIGN_IN));
   const handleOpenMenu = () => setIsOpen(!isOpen);
+  const handleSignOut = () => {
+    dispatch(signOutUser());
+    setIsOpen(!isOpen);
+  };
 
   useEffect(
     () => {
-      if (user) setUserSignedIn(!isUserSignedIn);
+      if (user) {
+        setUserSignedIn(!isUserSignedIn)
+      } else {
+        setUserSignedIn(false);
+      }
     },
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     [user]
   );
 
   const signInToggles = (
     <>
-      <span className="mainHeader-logIn--txt">{JoinTxt}</span>
-      <div className="mainHeader-logIn--btn">
+      <span className="mainHeader__sign-in--txt">{JoinTxt}</span>
+      <div className="mainHeader__sign-in--btn">
         <Button onClick={ handleClick } color="blue">{ButtonTxt}</Button>
       </div>
     </>
   );
 
   const userMenuClasses = clsx('mainHeader__sign-in--menu-container', { 'opened': isOpen });
+  const listItemCallback = { index: 1, callback: handleSignOut };
   const menuOptions = [
     <>
       <Person />
@@ -57,6 +68,7 @@ const MainHeader = ({ user }) => {
         <p className="mainHeader__sign-in--user-menu">{ userName }</p>
         <DropDownMenu
           listClassName={ 'mainHeader__sign-in--menu-list' }
+          listItemCallback={ listItemCallback }
           opened={ isOpen }
           onOpenMenuClick={ handleOpenMenu }
           options={ menuOptions }
@@ -65,7 +77,7 @@ const MainHeader = ({ user }) => {
     </>
   );
 
-  const userBar = isUserSignedIn ? signInToggles : userAccountMenu;
+  const userBar = isUserSignedIn ? userAccountMenu : signInToggles;
 
   return (
     <div className="mainHeader">

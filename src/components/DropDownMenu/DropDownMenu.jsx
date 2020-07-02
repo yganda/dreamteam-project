@@ -8,6 +8,7 @@ const DropDownMenu = (
   {
     className,
     listClassName,
+    listItemCallback,
     opened,
     options,
     onOpenMenuClick,
@@ -18,13 +19,15 @@ const DropDownMenu = (
   const MenuToggle = !opened ?
     <ArrowDropDown onClick={ onOpenMenuClick } /> :
     <ArrowDropUp onClick={ onOpenMenuClick } />;
+  const renderListItem = (option, ind) => {
+    const itemCallback = listItemCallback && listItemCallback.index === ind ?
+      listItemCallback.callback : () => {};
+    return <li className="dropdown-menu__list-item" key={ ind } onClick={ itemCallback }>{ option }</li>
+  };
+
   const Menu = (
     <ul className={ listClasses }>
-      {
-        options.map((option, ind) => (
-          <li className="dropdown-menu__list-item" key={ ind }>{ option }</li>
-        ))
-      }
+      { options.map(renderListItem) }
     </ul>
   );
   return (
@@ -38,6 +41,10 @@ const DropDownMenu = (
 DropDownMenu.propTypes = {
   className: PropTypes.string,
   listClassName: PropTypes.string,
+  listItemCallback: PropTypes.shape({
+    index: PropTypes.number,
+    callback: PropTypes.func,
+  }),
   opened: PropTypes.bool.isRequired,
   options: PropTypes.arrayOf(PropTypes.node).isRequired,
   onOpenMenuClick: PropTypes.func.isRequired,

@@ -32,7 +32,8 @@ const SignInForm = ({ user }) => {
     () => {
       if (user) handleModalClose()
     },
-    [handleModalClose, user]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [user]
   );
   const handleChange = (event) => {
     const { name, value } = event.target;
