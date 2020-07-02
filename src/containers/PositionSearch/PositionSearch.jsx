@@ -15,16 +15,6 @@ const PositionSearch = (props) => {
 
   const [isFilterBarOpened, toggleFilters] = useState(false);
 
-  const position = {
-    title: 'iOS Developer',
-    project: 'Dream Team project name',
-    customer: 'Startup Jam Inc.',
-    skills: ['Swift', 'Xcode'],
-    startDate: 'July 6, 2020',
-    duration: 'Duration',
-    applicants: 'number'
-  };
-
   const skillList = [
     {
       "id": "1e9fb162-a000-41b1-80ee-d65acdd2a82e",
