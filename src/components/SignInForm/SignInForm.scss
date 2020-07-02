@@ -69,5 +69,8 @@
       }
     }
 
+    &.button--disabled {
+      background: $color-brand-primary-blue-light;
+    }
   }
 }

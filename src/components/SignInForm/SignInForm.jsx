@@ -22,6 +22,7 @@ const SIGN_IN_BTN = 'Sign in';
 
 const SignInForm = ({ user }) => {
   const [isChecked, setIsChecked] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   // <---  FAKE AUTH  --->
@@ -45,8 +46,29 @@ const SignInForm = ({ user }) => {
     event.preventDefault();
     dispatch(signInUser(email, password));
   }
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   const extraInputLabel = <Link to="#" className="signin-form__forgot-password">{FORGOT_PASSWORD}</Link>;
   const isBtnDisabled = !email || !password;
+
+  const FormButtons = (
+    <div className="signin-form__buttons">
+      <Button
+        className="signin-form__signin-btn register"
+        noBgr={true}
+      >
+        {REGISTER_NOW}
+      </Button>
+      <Button
+        className="signin-form__signin-btn"
+        disabled={isBtnDisabled}
+        onClick={handleSignIn}
+      >
+        {SIGN_IN_BTN}
+      </Button>
+    </div>
+  );
 
   return (
     <div className="signin-form">
@@ -59,16 +81,16 @@ const SignInForm = ({ user }) => {
       </section>
       <form className="signin-form__fields">
         <InputField
-          type="email"
+          inputType="email"
           inputLabel="Email"
           name="email"
           onInputChange={ handleChange }
         />
         <InputField
-          type="password"
+          inputType={ showPassword ? 'text' : 'password' }
           extraLabel={ extraInputLabel }
           inputLabel="Password"
-          inputIcon={ <Visibility /> }
+          inputIcon={ <Visibility onClick={ handleShowPassword } /> }
           name="password"
           onInputChange={ handleChange }
         />
@@ -80,10 +102,7 @@ const SignInForm = ({ user }) => {
             onChangeCallback={ handleIsChecked }
           />
         </div>
-        <div className="signin-form__buttons">
-          <Button className="signin-form__signin-btn register" noBgr={true}>{REGISTER_NOW}</Button>
-          <Button className="signin-form__signin-btn" disabled={isBtnDisabled} onClick={handleSignIn}>{SIGN_IN_BTN}</Button>
-        </div>
+        { FormButtons }
       </form>
       <Close className="signin-form__close-icon" onClick={ handleModalClose } />
     </div>
