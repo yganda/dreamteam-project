@@ -30,28 +30,7 @@ export const Project = (props) => {
       It’s business as usual at Spartez. Join us!`,
     courses: [{ name: "", link: "", icon: "linkedinIcon" }],
   };
-
-  // const project = {
-  //   id: 151515,
-  //   title: "Dream team project name",
-  //   stage: "MVP",
-  //   customer: "Startup Jam Inc.",
-  //   skills: ["Java", ".NET", "CSS", "UX"],
-  //   peopleApplied: 3,
-  //   teamCount: 24,
-  //   startDate: "July 6, 2020",
-  //   duration: "13 weeks",
-  //   description:
-  //     "Development of a platform for the search for charity projects.",
-  //   fullDescription: `We like to play as a team, especially when things get tricky. This is why we’re not only holding on to the awesome people already onboard, but also continue to welcome and search for new team members. Just like all of our other activities, the job interviews, onboardings and bootcamps continue as planned, we’ve simply switched to 100% remote work and moved all our interactions online. What’s more, everyone who joins Spartez these days can work from home until the COVID-19 lockdown is over. Subsequently, all new team members from outside the Gdańsk metropolitan area can take up to two months to relocate. 
-  //     It’s business as usual at Spartez. Join us!`,
-  //   domain: "Education",
-  //   coordinators: [
-  //     { id: 252525, fullName: "Klim Starykau" },
-  //     { id: 234569, fullName: "Andrei Furs" },
-  //   ],
-  //   team: [111111, 666666, 888888, 101010],
-  // };
+console.log(props);
   const project = projects.find(
     (item) => item.id === props.match.params.projectId
   );
@@ -111,8 +90,6 @@ export const Project = (props) => {
       .filter((project) => project.id !== id && project.skillsCount > 0)
       .sort((a, b) => b.skillsCount - a.skillsCount)
       .slice(0, 4);
-
-    console.log(filteredPositionList);
 
     return filteredPositionList.map((project) => (
       <Link

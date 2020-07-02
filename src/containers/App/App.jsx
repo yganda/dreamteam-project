@@ -6,7 +6,7 @@ import ModalContainer from '../../components/ModalContainer';
 import Home from '../Home';
 import PositionSearch from '../PositionSearch';
 import Position from '../Position';
-import { Project } from '../Project/Project';
+import Project from '../Project';
 
 const App = () => {
   return (
