@@ -1,0 +1,26 @@
+@import "../../styles/variables/colors.scss";
+@import "../../styles/variables/typography.scss";
+
+.filter-item {
+  margin-right: 34px;
+
+  &_title {
+    color: $color-brand-secondary-grey-dark;
+    font: $common-text-small-font;
+    margin-bottom: 12px;
+  }
+
+  &_item {
+    color: $color-white;
+    font: $regular-font;
+  }
+
+  &_checkbox {
+    box-sizing: border-box;
+    height: 18px;
+    width: 18px;
+    border: 2px solid #B8C1D0;
+    border-radius: 2px;
+    background-color: rgba(255,255,255,0.12);
+  }
+}
