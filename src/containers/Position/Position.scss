@@ -1,6 +1,13 @@
 @import "../../styles/variables/colors.scss";
 @import "../../styles/variables/typography.scss";
 
+.positionPage-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .positionPage {
   width: 1440px;
   box-sizing: border-box;
@@ -45,6 +52,7 @@
 
 .positionPage-main--title {
   font: $h3-font;
+  width: 304px;
 }
 
 .positionPage-skills {
@@ -53,7 +61,7 @@
 }
 
 .positionPage-main--required {
-  margin-right: 365px;
+  margin-right: 100px;
 }
 
 .positionPage-main--roleDescription {

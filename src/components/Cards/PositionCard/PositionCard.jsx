@@ -10,9 +10,9 @@ const startDateLabel = 'Start date';
 const customerLabel = 'Customer';
 
 export const PositionCard = ({ position }) => {
-  const { title, project, skills, startDate, customer } = position;
+  const { title, project, skills, startDate } = position;
 
-  const renderSkills = (skills) => {
+  const renderSkills = () => {
     return skills.map((skill) => {
       return (
         <div className="positionCard-skillItem">
@@ -22,7 +22,7 @@ export const PositionCard = ({ position }) => {
     });
   };
 
-  const renderDate = (startDate) => {
+  const renderDate = () => {
     return (
       <>
         <EventIcon className="positionCard-icon" />
@@ -32,12 +32,12 @@ export const PositionCard = ({ position }) => {
     );
   };
 
-  const renderCustomer = (customer) => {
+  const renderCustomer = () => {
     return (
       <>
         <WorkRoundedIcon className="positionCard-icon" />
         <span className="positionCard-label">{customerLabel}</span>
-        {customer}
+        {project.customer}
       </>
     );
   };
@@ -46,10 +46,10 @@ export const PositionCard = ({ position }) => {
     <InfoPanel>
       <div className="positionCard">
         <div className="positionCard-title">{title}</div>
-        <div className="positionCard-project">{project}</div>
-        <div className="positionCard-skills">{renderSkills(skills)}</div>
-        <div className="positionCard-date">{renderDate(startDate)}</div>
-        <div className="positionCard-customer">{renderCustomer(customer)}</div>
+        <div className="positionCard-project">{project.name}</div>
+        <div className="positionCard-skills">{renderSkills()}</div>
+        <div className="positionCard-date">{renderDate()}</div>
+        <div className="positionCard-customer">{renderCustomer()}</div>
       </div>
     </InfoPanel>
   );
