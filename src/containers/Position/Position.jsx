@@ -6,6 +6,7 @@ import { PositionCard } from "../../components/Cards/PositionCard";
 import { PositionDetails } from "../../components/Details/PositionDetails";
 import { ProjectDetails } from "../../components/Details/ProjectDetails";
 import { SkillTag } from "../../components/SkillTag";
+import NotFoundPage from '../../containers/NotFoundPage';
 import { positions } from "../../mocks/positions";
 import { projects } from "../../mocks/projects";
 import { courses } from "../../mocks/courses";
@@ -37,7 +38,8 @@ const Position = (props) => {
   const position = positions.find(
     (item) => item.id === props.match.params.positionId
   );
-  const { id, title, project, skills, description, desiredSkills } = position;
+
+  const dispatch = useDispatch();
 
   const [isApplied, setIsApplied] = useState();
 
@@ -48,9 +50,11 @@ const Position = (props) => {
     [position, props.user]
   );
 
-  const currentProject = projects.find((item) => item.id === project.id);
+  if (!position) return <NotFoundPage />;
 
-  const dispatch = useDispatch();
+  const { id, title, project, skills, description, desiredSkills } = position;
+
+  const currentProject = projects.find((item) => item.id === project.id);
 
   const handleClick = () =>
     props.user ? setIsApplied(true) : dispatch(showModal(MODAL_TYPES.SIGN_IN));

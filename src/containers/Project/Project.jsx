@@ -4,6 +4,7 @@ import { Button } from "../../components/Button";
 import { ProjectCard } from "../../components/Cards/ProjectCard";
 import { ProjectDetails } from "../../components/Details/ProjectDetails";
 import { SkillTag } from "../../components/SkillTag";
+import NotFoundPage from '../../containers/NotFoundPage';
 import { positions } from "../../mocks/positions";
 import { projects } from "../../mocks/projects";
 import { Icon } from "@iconify/react";
@@ -22,7 +23,6 @@ const Project = (props) => {
   const project = projects.find(
     (item) => item.id === props.match.params.projectId
   );
-  const { id, title, skills, description, fullDescription, team } = project;
 
   const [isApplied, setIsApplied] = useState();
   const dispatch = useDispatch();
@@ -33,6 +33,10 @@ const Project = (props) => {
     },
     [project, props.user]
   );
+
+  if (!project) return <NotFoundPage />;
+  const { id, title, skills, description, fullDescription, team } = project;
+
 
   const handleClick = () =>
     props.user ? setIsApplied(true) : dispatch(showModal(MODAL_TYPES.SIGN_IN));
