@@ -28,6 +28,17 @@
   }
 }
 
+.projectPage-buttonMsg {
+  display: flex;
+  justify-content: center;
+
+  &--icon {
+    margin-right: 6px;
+    height: 20px;
+    width: auto;
+  }
+}
+
 .projectPage-title {
   font: $h1-font;
   margin-top: 24px;

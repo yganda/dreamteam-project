@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import { InfoPanel } from "../../components/InfoPanel";
 import { Button } from "../../components/Button";
@@ -13,10 +13,16 @@ import { ReactComponent as CourseraLogo } from "../../assets/coursera-icon.svg";
 import { ReactComponent as LinkedInLogo } from "../../assets/linkedin-icon.svg";
 import { Link } from "react-router-dom";
 import arrowLeft from "@iconify/icons-mdi/arrow-left";
+import checkIcon from "@iconify/icons-mdi/check";
+import uuidv4 from "uuid/v4";
+
+import { connect, useDispatch } from "react-redux";
+import { showModal } from "../../actions/modalActions";
+import { MODAL_TYPES } from "../../constants";
 
 import "./Position.scss";
 
-const backTxt = "Back to Positions";
+const backTxt = "Back to previous page";
 const roleDescrTxt = "Role description";
 const requiredSkillsTxt = "Required skills";
 const desiredSkillsTxt = "Desired skills";
@@ -27,14 +33,20 @@ const LINK_ICON = {
   courseraIcon: "coursera",
 };
 
-export const Position = (props) => {
-  
+const Position = (props) => {
   const position = positions.find(
     (item) => item.id === props.match.params.positionId
   );
   const { id, title, project, skills, description, desiredSkills } = position;
 
+  const [isApplied, setIsApplied] = useState(false);
+
   const currentProject = projects.find((item) => item.id === project.id);
+
+  const dispatch = useDispatch();
+
+  const handleClick = () =>
+    props.user ? setIsApplied(true) : dispatch(showModal(MODAL_TYPES.SIGN_IN));
 
   const suggestedCourses = courses.filter(
     (course) => position.courses.indexOf(course.id) >= 0
@@ -55,10 +67,11 @@ export const Position = (props) => {
 
     return filteredPositionList.map((position) => (
       <Link
+        key={uuidv4()}
         className="positionPage-footer--positionItem"
         to={`/positions/${position.id}`}
       >
-        <PositionCard position={position} key={position.id} />
+        <PositionCard position={position} />
       </Link>
     ));
   };
@@ -66,7 +79,7 @@ export const Position = (props) => {
   const renderSkills = (skills) => {
     return skills.map((skill) => {
       return (
-        <div className="positionPage-skillItem">
+        <div key={uuidv4()} className="positionPage-skillItem">
           <SkillTag>{skill}</SkillTag>
         </div>
       );
@@ -89,6 +102,7 @@ export const Position = (props) => {
       return (
         <a
           className="positionPage-courseCard"
+          key={uuidv4()}
           href={course.link}
           // eslint-disable-next-line react/jsx-no-target-blank
           target="_blank"
@@ -121,14 +135,27 @@ export const Position = (props) => {
   };
 
   const renderDisaredSkills = () => {
-    return desiredSkills.map((skill) => <li>{skill}</li>);
+    return desiredSkills.map((skill) => <li key={uuidv4()}>{skill}</li>);
   };
+
+  const buttonMsg = isApplied ? (
+    <div className="positionPage-buttonMsg">
+      <Icon icon={checkIcon} className="positionPage-buttonMsg--icon" />
+      {"Succesfully applied"}
+    </div>
+  ) : (
+    `Apply for ${title} role`
+  );
 
   return (
     <section className="positionPage-wrapper">
       <div className="positionPage">
         <header>
-          <Link className="positionPage-backLink">
+          <Link
+            to="#"
+            className="positionPage-backLink"
+            onClick={props.history.goBack}
+          >
             <Icon icon={arrowLeft} className="positionPage-backLink--icon" />
             {backTxt}
           </Link>
@@ -172,7 +199,9 @@ export const Position = (props) => {
             <div className="positionPage-main--indents">
               <ProjectDetails project={currentProject} />
             </div>
-            <Button color="blue">{`Apply for ${title} role`}</Button>
+            <Button color={isApplied ? "green" : "blue"} onClick={handleClick}>
+              {buttonMsg}
+            </Button>
           </div>
         </main>
         <footer className="positionPage-footer">
@@ -185,3 +214,9 @@ export const Position = (props) => {
     </section>
   );
 };
+
+const mapStateToProps = (state) => ({
+  user: state.userAccount.user,
+});
+
+export default connect(mapStateToProps, null)(Position);

@@ -1,10 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { InfoPanel } from '../../InfoPanel/InfoPanel';
-import { SkillTag } from '../../SkillTag/SkillTag';
-import './ProjectCard.scss';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import React from "react";
+import PropTypes from "prop-types";
+import { InfoPanel } from "../../InfoPanel/InfoPanel";
+import { SkillTag } from "../../SkillTag/SkillTag";
+import "./ProjectCard.scss";
+import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
 import EventIcon from "@material-ui/icons/Event";
+import uuidv4 from "uuid/v4";
 
 export const ProjectCard = ({ project }) => {
   const {
@@ -21,7 +22,7 @@ export const ProjectCard = ({ project }) => {
   const renderSkills = () => {
     return skills.map((skill) => {
       return (
-        <div className="projectCard-skillItem">
+        <div key={uuidv4()} className="projectCard-skillItem">
           <SkillTag>{skill}</SkillTag>
         </div>
       );
