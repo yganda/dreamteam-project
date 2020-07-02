@@ -1,6 +1,13 @@
 @import "../../styles/variables/colors.scss";
 @import "../../styles/variables/typography.scss";
 
+.projectPage-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .projectPage {
   width: 1440px;
   box-sizing: border-box;

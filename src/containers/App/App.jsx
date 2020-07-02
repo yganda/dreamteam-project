@@ -5,7 +5,7 @@ import MainHeader from '../../components/MainHeader';
 import ModalContainer from '../../components/ModalContainer';
 import Home from '../Home';
 import PositionSearch from '../PositionSearch';
-import { Position } from '../Position/Position';
+import Position from '../Position';
 import { Project } from '../Project/Project';
 
 const App = () => {
