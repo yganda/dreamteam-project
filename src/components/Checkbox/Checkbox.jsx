@@ -1,8 +1,8 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Checkbox as MaterialCheckbox, FormControlLabel } from '@material-ui/core';
+import PropTypes from 'prop-types';
 import { COLORS } from '../../constants';
-import PropTypes from "prop-types"
 
 const CustomizedCheckbox = withStyles({
   root: {

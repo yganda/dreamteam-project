@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import { uuid } from 'uuidv4';
 import { InfoPanel } from "../../components/InfoPanel";
 import { Button } from "../../components/Button";
 import { PositionCard } from "../../components/Cards/PositionCard";
@@ -15,7 +16,6 @@ import { ReactComponent as LinkedInLogo } from "../../assets/linkedin-icon.svg";
 import { Link } from "react-router-dom";
 import arrowLeft from "@iconify/icons-mdi/arrow-left";
 import checkIcon from "@iconify/icons-mdi/check";
-import uuidv4 from "uuid/v4";
 
 import { connect, useDispatch } from "react-redux";
 import { showModal } from "../../actions/modalActions";
@@ -78,7 +78,7 @@ const Position = (props) => {
 
     return filteredPositionList.map((position) => (
       <Link
-        key={uuidv4()}
+        key={uuid()}
         className="positionPage-footer--positionItem"
         to={`/positions/${position.id}`}
       >
@@ -90,7 +90,7 @@ const Position = (props) => {
   const renderSkills = (skills) => {
     return skills.map((skill) => {
       return (
-        <div key={uuidv4()} className="positionPage-skillItem">
+        <div key={uuid()} className="positionPage-skillItem">
           <SkillTag>{skill}</SkillTag>
         </div>
       );
@@ -113,7 +113,7 @@ const Position = (props) => {
       return (
         <a
           className="positionPage-courseCard"
-          key={uuidv4()}
+          key={uuid()}
           href={course.link}
           // eslint-disable-next-line react/jsx-no-target-blank
           target="_blank"
@@ -146,7 +146,7 @@ const Position = (props) => {
   };
 
   const renderDisaredSkills = () => {
-    return desiredSkills.map((skill) => <li key={uuidv4()}>{skill}</li>);
+    return desiredSkills.map((skill) => <li key={uuid()}>{skill}</li>);
   };
 
   const buttonMsg = isApplied ? (
