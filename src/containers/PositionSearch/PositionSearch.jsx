@@ -14,19 +14,22 @@ import './PositionSearch.scss';
 
 const PositionSearch = () => {
   const [isFilterBarOpened, toggleFilters] = useState(false);
-  const [selectedSkills, setSelectedSkills] = useState(null);
+  const [selectedSkills, setSelectedSkills] = useState([]);
   const handleFilters = () => {
     toggleFilters(!isFilterBarOpened);
   };
 
   const handleChange = (value) => {
-    const values = value && value.map(item => item.label);
-    setSelectedSkills(values);
+    //const values = value && value.map(item => item.label);
+    setSelectedSkills(value);
   };
 
   const skillList = uniq(positions.flatMap(position => position.skills))
     .map(skill => ({ value: uuid(), label: skill }));
   const renderCard = (position) => <PositionCard key={position.id} position={position}/>;
+  const selectedSkillLabels = selectedSkills.length ? selectedSkills.map(skill => skill.label) : null;
+  const filteredPositions = selectedSkillLabels ? positions
+    .filter(({ skills }) => skills.some(skill => selectedSkillLabels.includes(skill))) : positions;
 
   return (
       <div className="position-search">
@@ -48,9 +51,22 @@ const PositionSearch = () => {
             </div>
           </div>
           <div className={isFilterBarOpened ? 'position-search_filters-block' : 'position-search_filters-block--none'}>
-            <Filter title={"Position skills"} filterList={skillList} onFilterChange={handleChange} />
-            <Filter title={"Project domain"} filterList={skillList} onFilterChange={handleChange} />
-            <Filter title={"Project stage"} filterList={skillList} onFilterChange={handleChange} />
+            <Filter
+              title={"Position skills"}
+              filterList={skillList}
+              onFilterChange={handleChange}
+              selectedSkills={selectedSkills}
+            />
+            <Filter
+              title={"Project domain"}
+              filterList={skillList}
+              onFilterChange={() => {}}
+             />
+            <Filter
+              title={"Project stage"}
+              filterList={skillList}
+              onFilterChange={() => {}}
+             />
             <div className="position-search_filters--data">
               <div className="filter-item">
                 <div className="filter-item_title">Start date (from)</div>
@@ -60,7 +76,7 @@ const PositionSearch = () => {
             </div>
           </div>
           <div className="position-search_filtered-results">
-            { positions.map(renderCard) }
+            { filteredPositions.map(renderCard) }
           </div>
         </div>
       </div>

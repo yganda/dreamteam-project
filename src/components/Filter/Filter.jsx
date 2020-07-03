@@ -6,7 +6,7 @@ import Checkbox from '../../components/Checkbox';
 import { COLORS } from '../../constants/colors';
 import './Filter.scss';
 
-export const Filter = ({ title, filterList, onFilterChange }) => {
+export const Filter = ({ title, filterList, onFilterChange, selectedSkills }) => {
   const StyledItem = styled.div`
     padding: 0 12px;
     color: #555;
@@ -52,6 +52,7 @@ export const Filter = ({ title, filterList, onFilterChange }) => {
   const itemRenderer = ({ item, methods }) => {
     const handleItemClick = () => methods.addItem(item);
     const checked = methods.isSelected(item);
+    console.log(checked);
     return (
       <StyledItem key={ item.value }>
         <div className="filter-item_item" onClick={handleItemClick}>
@@ -72,9 +73,9 @@ export const Filter = ({ title, filterList, onFilterChange }) => {
       <StyledSelect
         multi
         options={filterList}
-        values={[]}
+        values={selectedSkills || []}
         itemRenderer={itemRenderer}
-        onChange={() => {}}
+        onChange={onFilterChange}
       />
     </div>
   );
@@ -88,5 +89,11 @@ Filter.propTypes = {
     })
   ).isRequired,
   onFilterChange: PropTypes.func.isRequired,
+  selectedSkills: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
   title: PropTypes.string.isRequired,
 };
