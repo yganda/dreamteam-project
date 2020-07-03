@@ -1,42 +1,32 @@
 import React, { useState } from 'react';
+import { uniq } from 'lodash';
+import { uuid } from 'uuidv4';
 import { Button } from '../../components/Button';
 import { Filter } from '../../components/Filter';
 import { PositionCard } from '../../components/Cards/PositionCard/PositionCard';
 import { positions } from '../../mocks/positions';
-import './PositionSearch.scss';
 import { Icon } from "@iconify/react";
 import searchOutlined from '@iconify/icons-mdi/search';
 import arrowDownDrop from '@iconify/icons-mdi/arrow-down-drop';
 import filterIcon from '@iconify/icons-mdi/filter-list';
 import calendarClock from '@iconify/icons-mdi/calendar-clock';
+import './PositionSearch.scss';
 
-
-const PositionSearch = (props) => {
-
+const PositionSearch = () => {
   const [isFilterBarOpened, toggleFilters] = useState(false);
-
-  const skillList = [
-    {
-      "id": "1e9fb162-a000-41b1-80ee-d65acdd2a82e",
-      "name": "iOS"
-    },
-    {
-      "id": "854f9a55-9edf-4f42-8e14-c8c863259e80",
-      "name": "JavaScript"
-    },
-    {
-      "id": "f62659b7-ac9f-4f3b-9e18-83dd5906771d",
-      "name": "Android"
-    },
-    {
-      "id": "fe85fe71-6b51-4b9a-ba9c-6ed9b67f4bb7",
-      "name": "Java"
-    }
-  ];
-
+  const [selectedSkills, setSelectedSkills] = useState(null);
   const handleFilters = () => {
     toggleFilters(!isFilterBarOpened);
   };
+
+  const handleChange = (value) => {
+    const values = value && value.map(item => item.label);
+    setSelectedSkills(values);
+  };
+
+  const skillList = uniq(positions.flatMap(position => position.skills))
+    .map(skill => ({ value: uuid(), label: skill }));
+  const renderCard = (position) => <PositionCard key={position.id} position={position}/>;
 
   return (
       <div className="position-search">
@@ -58,9 +48,9 @@ const PositionSearch = (props) => {
             </div>
           </div>
           <div className={isFilterBarOpened ? 'position-search_filters-block' : 'position-search_filters-block--none'}>
-            <Filter title={"Position skills"} filterList={skillList}/>
-            <Filter title={"Project domain"} filterList={skillList}/>
-            <Filter title={"Project stage"} filterList={skillList}/>
+            <Filter title={"Position skills"} filterList={skillList} onFilterChange={handleChange} />
+            <Filter title={"Project domain"} filterList={skillList} onFilterChange={handleChange} />
+            <Filter title={"Project stage"} filterList={skillList} onFilterChange={handleChange} />
             <div className="position-search_filters--data">
               <div className="filter-item">
                 <div className="filter-item_title">Start date (from)</div>
@@ -70,9 +60,7 @@ const PositionSearch = (props) => {
             </div>
           </div>
           <div className="position-search_filtered-results">
-            {positions.map((position, index) => {
-              return <PositionCard key={index} position={position}/>
-            })}
+            { positions.map(renderCard) }
           </div>
         </div>
       </div>
