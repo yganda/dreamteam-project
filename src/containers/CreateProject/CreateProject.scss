@@ -1,0 +1,26 @@
+
+@import "../../styles/variables/colors.scss";
+@import "../../styles/variables/typography.scss";
+
+.createProject-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .createProject {
+    width: 1440px;
+    height:839px;
+    box-sizing: border-box;
+    padding: 18px 12px 24px 12px;
+    color: $color-white;
+    background-image: url(../../assets/Bg_underConstruction.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-title {
+        font: $h1-font;
+    }
+  }
