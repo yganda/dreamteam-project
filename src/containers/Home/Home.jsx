@@ -11,8 +11,11 @@ const POSITION_BTN_CONTENT = "Find a position";
 
 const Home = () => {
   const history = useHistory();
-  const handleClick = () => {
+  const handleClickFindPosition = () => {
     history.push('/positions');
+  };
+  const handleClickCreateProject = () => {
+    history.push('/post-project');
   };
   return (
     <section className="home-page__container">
@@ -27,8 +30,8 @@ const Home = () => {
               Link is social platform where you can learn new skill by helping social projects.
             </div>
             <div className="home-page__first-block--buttons">
-              <Button className="home-page__button">{PROJECT_BTN_CONTENT}</Button>
-              <Button onClick={handleClick} className="home-page__button">{POSITION_BTN_CONTENT}</Button>
+              <Button onClick={handleClickCreateProject} className="home-page__button">{PROJECT_BTN_CONTENT}</Button>
+              <Button onClick={handleClickFindPosition} className="home-page__button">{POSITION_BTN_CONTENT}</Button>
             </div>
           </div>
           <div className="home-page__first-block--image">
@@ -145,8 +148,8 @@ const Home = () => {
             Wanna join?
           </div>
           <div className="home-page__join-block--buttons">
-            <Button className="home-page__join-block--button">{PROJECT_BTN_CONTENT}</Button>
-            <Button onClick={handleClick} className="home-page__join-block--button">{POSITION_BTN_CONTENT}</Button>
+            <Button onClick={handleClickCreateProject} className="home-page__join-block--button">{PROJECT_BTN_CONTENT}</Button>
+            <Button onClick={handleClickFindPosition} className="home-page__join-block--button">{POSITION_BTN_CONTENT}</Button>
           </div>
         </div>
       </div>
