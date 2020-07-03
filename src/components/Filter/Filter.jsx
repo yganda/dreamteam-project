@@ -47,6 +47,13 @@ export const Filter = ({ title, filterList, onFilterChange, selectedSkills }) =>
         color: ${ COLORS.GREY['#8F9BB3'] };
       }
     }
+    .react-dropdown-select-option {
+      color: ${ COLORS.GREY['#8F9BB3'] };
+      background: none;
+      border: 1px solid ${ COLORS.GREY['#8F9BB3'] };
+      border-radius: 3px;
+      font: normal 13px/18px 'Montserrat', sans-serif; 
+    }
 `;
 
   const itemRenderer = ({ item, methods }) => {
@@ -73,6 +80,7 @@ export const Filter = ({ title, filterList, onFilterChange, selectedSkills }) =>
       <StyledSelect
         multi
         options={filterList}
+        placeholder="All"
         values={selectedSkills || []}
         itemRenderer={itemRenderer}
         onChange={onFilterChange}
