@@ -6,6 +6,8 @@ export const positions = [
       id: '3333',
       name: "Earthjustice",
       customer: "Earthjustice Inc.",
+      domain: "Charity",
+      stage: "Discovery"
     },
     skills: ["Java", "AWS Development", "Spring"],
     desiredSkills: [
@@ -28,6 +30,8 @@ export const positions = [
       id: '1111',
       name: "Dream team project name",
       customer: "Startup Jam Inc.",
+      domain: "Events",
+      stage: "Teaming"
     },
     skills: ["Java", "PostgreSQL"],
     desiredSkills: [
@@ -49,6 +53,8 @@ export const positions = [
       id: '4444',
       name: "CURE Project",
       customer: "CURE International",
+      domain: "Education",
+      stage: "MVP"
     },
     skills: ["Scala", "Mongo DB"],
     desiredSkills: [
@@ -68,6 +74,8 @@ export const positions = [
       id: '4444',
       name: "CURE Project",
       customer: "CURE International",
+      domain: "Charity",
+      stage: "Development"
     },
     skills: ["JS", "React", "HTML5"],
     desiredSkills: [
@@ -89,6 +97,8 @@ export const positions = [
       id: '2222',
       name: "Farm Aid Project",
       customer: "Farm Aid Inc.",
+      domain: "Events",
+      stage: "Completed"
     },
     skills: ["JS", "React", "HTML5", "CSS"],
     desiredSkills: [
@@ -110,6 +120,8 @@ export const positions = [
       id: '3333',
       name: "Earthjustice",
       customer: "Earthjustice Inc.",
+      domain: "Education",
+      stage: "Discovery"
     },
     skills: ["JS", "Angular", "HTML5", "CSS"],
     desiredSkills: [
@@ -132,6 +144,8 @@ export const positions = [
       id: '5555',
       name: "Project Sunshine",
       customer: "Project Sunshine, Inc.",
+      domain: "Charity",
+      stage: "Teaming"
     },
     skills: ["JS", "Angular", "HTML5"],
     desiredSkills: [
@@ -153,6 +167,8 @@ export const positions = [
       id: '3333',
       name: "Earthjustice",
       customer: "Earthjustice Inc.",
+      domain: "Events",
+      stage: "MVP"
     },
     skills: ["Project Management", "Scrum master"],
     desiredSkills: [
@@ -174,6 +190,8 @@ export const positions = [
       id: '2222',
       name: "Farm Aid Project",
       customer: "Farm Aid Inc.",
+      domain: "Education",
+      stage: "Development"
     },
     skills: ["Project Management", "Scrum master"],
     desiredSkills: [
@@ -196,6 +214,8 @@ export const positions = [
       id: '3333',
       name: "Earthjustice",
       customer: "Earthjustice Inc.",
+      domain: "Events",
+      stage: "Completed"
     },
     skills: ["QA", "SQL", "Jenkins"],
     desiredSkills: [
@@ -216,6 +236,8 @@ export const positions = [
       id: '2222',
       name: "Farm Aid Project",
       customer: "Farm Aid Inc.",
+      domain: "Education",
+      stage: "Discovery"
     },
     skills: ["QA", "Automation QA", "Java"],
     desiredSkills: [
@@ -237,6 +259,8 @@ export const positions = [
       id: '4444',
       name: "CURE Project",
       customer: "CURE International",
+      domain: "Charity",
+      stage: "MVP"
     },
     skills: ["QA", "Automation QA", "Java"],
     desiredSkills: [
@@ -258,6 +282,8 @@ export const positions = [
       id: '5555',
       name: "Project Sunshine",
       customer: "Project Sunshine, Inc.",
+      domain: "Education",
+      stage: "Development"
     },
     skills: ["QA", "Automation QA", "Java"],
     desiredSkills: [
@@ -278,6 +304,8 @@ export const positions = [
       id: '2222',
       name: "Farm Aid Project",
       customer: "Farm Aid Inc.",
+      domain: "Charity",
+      stage: "Teaming"
     },
     skills: ["UX"],
     desiredSkills: [
@@ -298,6 +326,8 @@ export const positions = [
       id: '4444',
       name: "CURE Project",
       customer: "CURE International",
+      domain: "Education",
+      stage: "Completed"
     },
     skills: ["Project Management", "Scrum master"],
     desiredSkills: [
@@ -320,6 +350,8 @@ export const positions = [
       id: '2222',
       name: "Farm Aid Project",
       customer: "Farm Aid Inc.",
+      domain: "Charity",
+      stage: "Discovery"
     },
     skills: ["Scala", "Mongo DB", "PostgreSQL"],
     desiredSkills: [
@@ -339,6 +371,8 @@ export const positions = [
       id: '3333',
       name: "Earthjustice",
       customer: "Earthjustice Inc.",
+      domain: "Charity",
+      stage: "Development"
     },
     skills: ["UX"],
     desiredSkills: [
