@@ -21,7 +21,6 @@ const PositionSearch = () => {
   };
 
   const handleChange = (value) => {
-    //const values = value && value.map(item => item.label);
     setSelectedSkills(value);
   };
 
