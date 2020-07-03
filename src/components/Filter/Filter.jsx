@@ -81,9 +81,10 @@ export const Filter = ({ title, filterList, onFilterChange, selectedSkills }) =>
         multi
         options={filterList}
         placeholder="All"
-        values={selectedSkills || []}
         itemRenderer={itemRenderer}
         onChange={onFilterChange}
+        values={selectedSkills}
+        valueField="label"
       />
     </div>
   );
