@@ -164,6 +164,10 @@
     padding: 12px 18px;
     color: $color-brand-secondary-grey-dark;
     font: $l1-font;
+
+    &::placeholder {
+      color: $color-brand-secondary-grey-dark;
+    }
   }
 
   &_filters--data--icon {

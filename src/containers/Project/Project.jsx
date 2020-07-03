@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { uuid } from 'uuidv4';
 import { InfoPanel } from "../../components/InfoPanel";
 import { Button } from "../../components/Button";
 import { ProjectCard } from "../../components/Cards/ProjectCard";
@@ -11,7 +12,6 @@ import { Icon } from "@iconify/react";
 import accountCheck from "@iconify/icons-mdi/account-check";
 import arrowLeft from "@iconify/icons-mdi/arrow-left";
 import checkIcon from "@iconify/icons-mdi/check";
-import uuidv4 from "uuid/v4";
 import { Link } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
 import { showModal } from "../../actions/modalActions";
@@ -58,7 +58,7 @@ const Project = (props) => {
   const renderSkills = (skills) => {
     return skills.map((skill) => {
       return (
-        <div key={uuidv4()} className="projectPage-skillItem">
+        <div key={uuid()} className="projectPage-skillItem">
           <SkillTag>{skill}</SkillTag>
         </div>
       );
@@ -70,7 +70,7 @@ const Project = (props) => {
       const teamMember = positions.find((item) => item.id === position);
       return (
         <Link
-          key={uuidv4()}
+          key={uuid()}
           className="projectPage-teamCard"
           to={`/positions/${teamMember.id}`}
         >
