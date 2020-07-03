@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/dreamteam-project/static/css/main.78b5ac78.chunk.css",
+    "main.js": "/dreamteam-project/static/js/main.f81443be.chunk.js",
+    "main.js.map": "/dreamteam-project/static/js/main.f81443be.chunk.js.map",
+    "runtime-main.js": "/dreamteam-project/static/js/runtime-main.2d3ed3d7.js",
+    "runtime-main.js.map": "/dreamteam-project/static/js/runtime-main.2d3ed3d7.js.map",
+    "static/js/2.2c9b6c7c.chunk.js": "/dreamteam-project/static/js/2.2c9b6c7c.chunk.js",
+    "static/js/2.2c9b6c7c.chunk.js.map": "/dreamteam-project/static/js/2.2c9b6c7c.chunk.js.map",
+    "index.html": "/dreamteam-project/index.html",
+    "precache-manifest.b9cf0ef074e6c3033e5914dc20eaac36.js": "/dreamteam-project/precache-manifest.b9cf0ef074e6c3033e5914dc20eaac36.js",
+    "service-worker.js": "/dreamteam-project/service-worker.js",
+    "static/css/main.78b5ac78.chunk.css.map": "/dreamteam-project/static/css/main.78b5ac78.chunk.css.map",
+    "static/js/2.2c9b6c7c.chunk.js.LICENSE.txt": "/dreamteam-project/static/js/2.2c9b6c7c.chunk.js.LICENSE.txt",
+    "static/media/CreateProject.scss": "/dreamteam-project/static/media/Bg_underConstruction.3e312fa8.png",
+    "static/media/card-icon.d84be3f6.svg": "/dreamteam-project/static/media/card-icon.d84be3f6.svg",
+    "static/media/coursera-icon.a32028b3.svg": "/dreamteam-project/static/media/coursera-icon.a32028b3.svg",
+    "static/media/epam-icon.1413d94d.svg": "/dreamteam-project/static/media/epam-icon.1413d94d.svg",
+    "static/media/facebook-icon.35f0384f.svg": "/dreamteam-project/static/media/facebook-icon.35f0384f.svg",
+    "static/media/google-icon.95edcc7c.svg": "/dreamteam-project/static/media/google-icon.95edcc7c.svg",
+    "static/media/linkedin-icon.e862fa27.svg": "/dreamteam-project/static/media/linkedin-icon.e862fa27.svg",
+    "static/media/logo-icon.9a27d0b2.svg": "/dreamteam-project/static/media/logo-icon.9a27d0b2.svg",
+    "static/media/main-page-top.7ce90ca4.svg": "/dreamteam-project/static/media/main-page-top.7ce90ca4.svg",
+    "static/media/news-icon.58c77853.svg": "/dreamteam-project/static/media/news-icon.58c77853.svg",
+    "static/media/ufo-cow.fc63e288.svg": "/dreamteam-project/static/media/ufo-cow.fc63e288.svg",
+    "static/media/underConstruction-icon.269ec164.svg": "/dreamteam-project/static/media/underConstruction-icon.269ec164.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d3ed3d7.js",
+    "static/js/2.2c9b6c7c.chunk.js",
+    "static/css/main.78b5ac78.chunk.css",
+    "static/js/main.f81443be.chunk.js"
+  ]
+}
