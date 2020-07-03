@@ -23,10 +23,11 @@ const SIGN_IN_BTN = 'Sign in';
 const SignInForm = ({ user }) => {
   const [isChecked, setIsChecked] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  
   // <---  FAKE AUTH  --->
   // <---FOR DEMO ONLY--->
+  const [email, setEmail] = useState('demo@gmail.com');
+  const [password, setPassword] = useState('demo');
   const dispatch = useDispatch();
   const handleModalClose = () => dispatch(closeModal());
   useEffect(
@@ -84,6 +85,8 @@ const SignInForm = ({ user }) => {
           inputType="email"
           inputLabel="Email"
           name="email"
+          value="demo@gmail.com"             //<---FOR DEMO ONLY--->
+          readonly                           //<---FOR DEMO ONLY--->
           onInputChange={ handleChange }
         />
         <InputField
@@ -92,6 +95,8 @@ const SignInForm = ({ user }) => {
           inputLabel="Password"
           inputIcon={ <Visibility onClick={ handleShowPassword } /> }
           name="password"
+          value="demo"                        //<---FOR DEMO ONLY--->
+          readonly                            //<---FOR DEMO ONLY--->
           onInputChange={ handleChange }
         />
         <div className="signin-form__remember-user">
