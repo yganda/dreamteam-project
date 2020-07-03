@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { connect, useDispatch } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { Icon } from "@iconify/react"
-import { Person, Notifications } from '@material-ui/icons';
-import logout from '@iconify/icons-mdi/logout';
-import clsx from 'clsx';
-import { MODAL_TYPES } from '../../constants';
-import { signOutUser } from '../../actions/signInActions';
-import { Button } from '../Button/Button';
-import DropDownMenu from '../DropDownMenu';
-import { showModal } from '../../actions/modalActions';
-import './MainHeader.scss';
+import React, { useEffect, useState } from "react";
+import { connect, useDispatch } from "react-redux";
+import { withRouter } from "react-router-dom";
+import { Icon } from "@iconify/react";
+import { Person, Notifications } from "@material-ui/icons";
+import logout from "@iconify/icons-mdi/logout";
+import clsx from "clsx";
+import { MODAL_TYPES } from "../../constants";
+import { signOutUser } from "../../actions/signInActions";
+import { Button } from "../Button/Button";
+import DropDownMenu from "../DropDownMenu";
+import { showModal } from "../../actions/modalActions";
+import { ReactComponent as MainLogo } from "../../assets/logo-icon.svg";
+import { Link } from "react-router-dom";
+import "./MainHeader.scss";
 
-const LogoTxt = 'Logo';
-const JoinTxt = 'Join Us';
-const ButtonTxt = 'Sign In';
-const userName = 'Klim Starykau'; // mock
+const JoinTxt = "Join Us";
+const ButtonTxt = "Sign In";
+const userName = "Klim Starykau"; // mock
 
 const MainHeader = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,12 +32,12 @@ const MainHeader = ({ user }) => {
   useEffect(
     () => {
       if (user) {
-        setUserSignedIn(!isUserSignedIn)
+        setUserSignedIn(!isUserSignedIn);
       } else {
         setUserSignedIn(false);
       }
     },
-     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [user]
   );
 
@@ -44,12 +45,16 @@ const MainHeader = ({ user }) => {
     <>
       <span className="mainHeader__sign-in--txt">{JoinTxt}</span>
       <div className="mainHeader__sign-in--btn">
-        <Button onClick={ handleClick } color="blue">{ButtonTxt}</Button>
+        <Button onClick={handleClick} color="blue">
+          {ButtonTxt}
+        </Button>
       </div>
     </>
   );
 
-  const userMenuClasses = clsx('mainHeader__sign-in--menu-container', { 'opened': isOpen });
+  const userMenuClasses = clsx("mainHeader__sign-in--menu-container", {
+    opened: isOpen,
+  });
   const listItemCallback = { index: 1, callback: handleSignOut };
   const menuOptions = [
     <>
@@ -59,19 +64,19 @@ const MainHeader = ({ user }) => {
     <>
       <Icon icon={logout} width="24px" />
       <span>Log Out</span>
-    </>
+    </>,
   ];
   const userAccountMenu = (
     <>
       <Notifications className="mainHeader__sign-in--notification" />
-      <div className={ userMenuClasses }>
-        <p className="mainHeader__sign-in--user-menu">{ userName }</p>
+      <div className={userMenuClasses}>
+        <p className="mainHeader__sign-in--user-menu">{userName}</p>
         <DropDownMenu
-          listClassName={ 'mainHeader__sign-in--menu-list' }
-          listItemCallback={ listItemCallback }
-          opened={ isOpen }
-          onOpenMenuClick={ handleOpenMenu }
-          options={ menuOptions }
+          listClassName={"mainHeader__sign-in--menu-list"}
+          listItemCallback={listItemCallback}
+          opened={isOpen}
+          onOpenMenuClick={handleOpenMenu}
+          options={menuOptions}
         />
       </div>
     </>
@@ -83,12 +88,11 @@ const MainHeader = ({ user }) => {
     <div className="mainHeader">
       <div className="mainHeader-container main-container">
         <div className="mainHeader-logo">
-          <span className="mainHeader-logo--img" />
-          <div className="mainHeader-logo--txt">{LogoTxt}</div>
+          <Link to={"/dreamteam-project"}>
+            <MainLogo />
+          </Link>
         </div>
-        <div className="mainHeader__sign-in">
-          { userBar }
-        </div>
+        <div className="mainHeader__sign-in">{userBar}</div>
       </div>
     </div>
   );
